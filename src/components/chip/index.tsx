@@ -28,7 +28,7 @@ const Chip: React.FC<IProps> = ({
       icon={icon}
       deleteIcon={deleteIcon}
       onClick={onClick}
-      disabled
+      disabled={disabled}
     />
   );
 };
