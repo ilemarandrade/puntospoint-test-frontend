@@ -33,7 +33,7 @@ const CardPulso: React.FC<IProps> = ({ data }) => {
   }, []);
 
   return (
-    <Card className="px-5 pt-2 pb-5 w-full space-y-2 rounded-2xl shadow-lg">
+    <Card className="px-5 pt-2 pb-5 w-full space-y-2 rounded-2xl shadow-lg min-w-64">
       <h3 className="text-center font-semibold capitalize">
         {date.toLocaleDateString('es-ES', { month: 'long' })}
       </h3>
