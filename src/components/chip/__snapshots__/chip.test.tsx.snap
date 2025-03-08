@@ -3,10 +3,9 @@
 exports[`Chip renders and calls onClick 1`] = `
 <div>
   <div
-    aria-disabled="true"
-    class="MuiButtonBase-root Mui-disabled MuiChip-root MuiChip-filled Mui-disabled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-clickable MuiChip-clickableColorDefault MuiChip-filledDefault css-1ykktcv-MuiButtonBase-root-MuiChip-root"
+    class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-clickable MuiChip-clickableColorDefault MuiChip-filledDefault css-1ykktcv-MuiButtonBase-root-MuiChip-root"
     role="button"
-    tabindex="-1"
+    tabindex="0"
   >
     <span
       class="MuiChip-label MuiChip-labelMedium css-1dybbl5-MuiChip-label"
@@ -20,7 +19,7 @@ exports[`Chip renders and calls onClick 1`] = `
 exports[`Chip renders outlined chip 1`] = `
 <div>
   <div
-    class="MuiChip-root MuiChip-outlined Mui-disabled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-outlinedDefault css-1lrxra9-MuiChip-root"
+    class="MuiChip-root MuiChip-outlined MuiChip-sizeMedium MuiChip-colorDefault MuiChip-outlinedDefault css-1lrxra9-MuiChip-root"
   >
     <span
       class="MuiChip-label MuiChip-labelMedium css-16cgrcw-MuiChip-label"
@@ -34,7 +33,7 @@ exports[`Chip renders outlined chip 1`] = `
 exports[`Chip renders outlined chip with delete 1`] = `
 <div>
   <div
-    class="MuiButtonBase-root MuiChip-root MuiChip-outlined Mui-disabled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-outlinedDefault css-1gc4ec1-MuiButtonBase-root-MuiChip-root"
+    class="MuiButtonBase-root MuiChip-root MuiChip-outlined MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-outlinedDefault css-1gc4ec1-MuiButtonBase-root-MuiChip-root"
     role="button"
     tabindex="0"
   >
@@ -61,7 +60,7 @@ exports[`Chip renders outlined chip with delete 1`] = `
 exports[`Chip renders outlined chip with icon 1`] = `
 <div>
   <div
-    class="MuiChip-root MuiChip-outlined Mui-disabled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-outlinedDefault css-1lrxra9-MuiChip-root"
+    class="MuiChip-root MuiChip-outlined MuiChip-sizeMedium MuiChip-colorDefault MuiChip-outlinedDefault css-1lrxra9-MuiChip-root"
   >
     <svg
       aria-hidden="true"
@@ -86,7 +85,7 @@ exports[`Chip renders outlined chip with icon 1`] = `
 exports[`Chip renders with delete icon and calls onDelete 1`] = `
 <div>
   <div
-    class="MuiButtonBase-root MuiChip-root MuiChip-filled Mui-disabled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-16yb58i-MuiButtonBase-root-MuiChip-root"
+    class="MuiButtonBase-root MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-deletable MuiChip-deletableColorDefault MuiChip-filledDefault css-16yb58i-MuiButtonBase-root-MuiChip-root"
     role="button"
     tabindex="0"
   >
@@ -113,7 +112,7 @@ exports[`Chip renders with delete icon and calls onDelete 1`] = `
 exports[`Chip renders with icon 1`] = `
 <div>
   <div
-    class="MuiChip-root MuiChip-filled Mui-disabled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault css-5c51lm-MuiChip-root"
+    class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault css-5c51lm-MuiChip-root"
   >
     <svg
       aria-hidden="true"
@@ -138,7 +137,7 @@ exports[`Chip renders with icon 1`] = `
 exports[`Chip renders with label 1`] = `
 <div>
   <div
-    class="MuiChip-root MuiChip-filled Mui-disabled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault css-5c51lm-MuiChip-root"
+    class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault css-5c51lm-MuiChip-root"
   >
     <span
       class="MuiChip-label MuiChip-labelMedium css-1dybbl5-MuiChip-label"
@@ -152,10 +151,9 @@ exports[`Chip renders with label 1`] = `
 exports[`renders outlined chip and calls onClick 1`] = `
 <div>
   <div
-    aria-disabled="true"
-    class="MuiButtonBase-root Mui-disabled MuiChip-root MuiChip-outlined Mui-disabled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-clickable MuiChip-clickableColorDefault MuiChip-outlinedDefault css-soe3uv-MuiButtonBase-root-MuiChip-root"
+    class="MuiButtonBase-root MuiChip-root MuiChip-outlined MuiChip-sizeMedium MuiChip-colorDefault MuiChip-clickable MuiChip-clickableColorDefault MuiChip-outlinedDefault css-soe3uv-MuiButtonBase-root-MuiChip-root"
     role="button"
-    tabindex="-1"
+    tabindex="0"
   >
     <span
       class="MuiChip-label MuiChip-labelMedium css-16cgrcw-MuiChip-label"
