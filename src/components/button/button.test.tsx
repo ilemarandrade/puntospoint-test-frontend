@@ -56,15 +56,21 @@ describe('Button Component', () => {
     ];
 
     variants.forEach((variant) => {
-      render(<Button variant={variant}>{variant}</Button>);
+      const { container } = render(
+        <Button variant={variant}>{variant}</Button>
+      );
+
+      expect(container).toMatchSnapshot();
+
       const buttonElement = screen.getByRole('button', { name: variant });
       expect(buttonElement).toHaveClass(`MuiButton-${variant}`);
     });
   });
 
   test('displays the correct icon', () => {
-    render(<Button startIcon={<AddIcon />} />);
+    const { container } = render(<Button startIcon={<AddIcon />} />);
 
+    expect(container).toMatchSnapshot();
     const iconElement = screen.getByTestId('AddIcon');
     expect(iconElement).toBeInTheDocument();
   });
