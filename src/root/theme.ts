@@ -1,5 +1,11 @@
 import { createTheme } from '@mui/material';
 
+declare module '@mui/material/TableContainer' {
+  interface TableContainerOwnProps {
+    numberOfColumns: number;
+  }
+}
+
 const palette = {
   primary: {
     main: '100 75 186',
@@ -152,6 +158,64 @@ const theme = createTheme({
               },
             },
           ],
+        },
+      },
+    },
+    MuiTableContainer: {
+      styleOverrides: {
+        root: {
+          variants: [
+            {
+              props: { numberOfColumns: 1 },
+              style: {
+                '& .MuiTableCell-root': {
+                  padding: '12px 8px',
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
+    MuiTableHead: {
+      styleOverrides: {
+        root: {
+          '& .MuiTableCell-root:hover': {
+            backgroundColor: 'transparent',
+          },
+        },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          fontSize: 14,
+          padding: '12px 24px',
+          borderBottomWidth: 0,
+          '&:hover': {
+            backgroundColor: '#d6d1d6',
+          },
+          '&:focused': {
+            backgroundColor: '#e1dde2',
+          },
+        },
+      },
+    },
+    MuiTooltip: {
+      defaultProps: {
+        placement: 'top-start',
+        followCursor: true,
+      },
+      styleOverrides: {
+        tooltip: {
+          backgroundColor: '#313033',
+          borderRadius: 4,
+          gap: 10,
+          paddingTop: 4,
+          paddingRight: 8,
+          paddingBottom: 4,
+          paddingLeft: 8,
+          fontSize: '0.75rem',
         },
       },
     },
