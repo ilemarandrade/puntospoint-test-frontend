@@ -219,6 +219,18 @@ const theme = createTheme({
         },
       },
     },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'white',
+          boxShadow: '0px 4px 10px 0px #0000001A',
+          paddingTop: 8,
+          paddingBottom: 8,
+          paddingRight: 16,
+          paddingLeft: 16,
+        },
+      },
+    },
   },
 });
 
