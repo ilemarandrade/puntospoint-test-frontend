@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import CardPulso from './'; // Asegúrate de que la ruta sea correcta
+import CardPulso from '.';
 
 const meta = {
   title: 'Components/CardPulso',
@@ -12,7 +12,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// Datos de ejemplo para las historias
 const exampleData = {
   date: new Date('2023-10-01'),
   clients: 150,

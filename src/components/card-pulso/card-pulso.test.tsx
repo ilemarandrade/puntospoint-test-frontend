@@ -17,12 +17,14 @@ describe('CardPulso Component', () => {
   };
 
   test('renders correctly with provided data', () => {
-    render(<CardPulso data={mockData} />);
+    const { container } = render(<CardPulso data={mockData} />);
+
+    expect(container).toMatchSnapshot();
 
     expect(screen.getByText(/Octubre/i)).toBeInTheDocument();
 
     expect(screen.getByText('Clientes')).toBeInTheDocument();
-    expect(screen.getByText('1.500')).toBeInTheDocument(); 
+    expect(screen.getByText('1.500')).toBeInTheDocument();
 
     expect(screen.getByText('Ventas Totales')).toBeInTheDocument();
     expect(screen.getByText('300')).toBeInTheDocument();

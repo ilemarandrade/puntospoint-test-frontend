@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardPulso Component renders correctly with provided data 1`] = `
+<div>
+  <div
+    class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root px-5 pt-2 pb-5 w-full space-y-2 rounded-2xl shadow-lg min-w-64 css-1j74uew-MuiPaper-root-MuiCard-root"
+    style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
+  >
+    <h3
+      class="text-center font-semibold capitalize"
+    >
+      octubre
+    </h3>
+    <div
+      class="flex justify-between"
+    >
+      <p
+        class="text-sm"
+      >
+        Clientes
+      </p>
+      <p
+        class="text-sm"
+      >
+        1.500
+      </p>
+    </div>
+    <div
+      class="flex justify-between"
+    >
+      <p
+        class="text-sm"
+      >
+        Ventas Totales
+      </p>
+      <p
+        class="text-sm"
+      >
+        300
+      </p>
+    </div>
+    <div
+      class="flex justify-between"
+    >
+      <p
+        class="text-sm"
+      >
+        Monto Total
+      </p>
+      <p
+        class="text-sm"
+      >
+        $
+        50.000
+      </p>
+    </div>
+    <h3
+      class="font-semibold"
+    >
+      Cashback
+    </h3>
+    <div
+      class="flex justify-between"
+    >
+      <p
+        class="text-sm"
+      >
+        Acumulado
+      </p>
+      <p
+        class="text-sm"
+      >
+        $
+        2.000
+      </p>
+    </div>
+    <div
+      class="flex justify-between"
+    >
+      <p
+        class="text-sm"
+      >
+        Facturado 
+        15/09
+         
+      </p>
+      <p
+        class="text-sm"
+      >
+        $
+        15.000
+      </p>
+    </div>
+    <div
+      class="flex justify-between"
+    >
+      <p
+        class="text-sm"
+      >
+        Facturado 
+        20/09
+         
+      </p>
+      <p
+        class="text-sm"
+      >
+        $
+        35.000
+      </p>
+    </div>
+  </div>
+</div>
+`;
