@@ -16,9 +16,9 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
+          gap: 0,
           fontSize: 14,
           height: 40,
-          gap: '8px',
           paddingTop: '10px',
           paddingRight: '24px',
           paddingBottom: '10px',
