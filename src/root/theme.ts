@@ -75,6 +75,86 @@ const theme = createTheme({
         },
       },
     },
+    MuiChip: {
+      styleOverrides: {
+        icon: {
+          width: 18,
+          height: 18,
+          color: `rgb(${palette.primary.main})`,
+          margin: 0,
+        },
+        label: {
+          padding: 0,
+          fontSize: 14,
+        },
+        deleteIcon: {
+          width: 18,
+          height: 18,
+          margin: 0,
+          color: 'rgba(0, 0, 0, 0.87)',
+        },
+        root: {
+          padding: '6px 8px',
+          gap: 8,
+          minWidth: 60,
+          borderRadius: 8,
+
+          variants: [
+            {
+              props: { variant: 'filled' },
+              style: {
+                display: 'flex',
+                backgroundColor: '#E7DFF8',
+                '&:hover': {
+                  backgroundColor: `#cec7df`,
+                },
+                '&:focus': {
+                  backgroundColor: `#cec7df`,
+                },
+                '&:active': {
+                  backgroundColor: `#cec7df`,
+                },
+              },
+            },
+            {
+              props: { variant: 'filled', disabled: true },
+              style: {
+                backgroundColor: '#e7e2e7',
+                opacity: '1 !important',
+                '& *': {
+                  color: '#9b969b',
+                },
+              },
+            },
+            {
+              props: { variant: 'outlined' },
+              style: {
+                borderColor: '#79757F',
+                '&:hover': {
+                  backgroundColor: `#efebef`,
+                },
+                '&:focus': {
+                  backgroundColor: `#efebef`,
+                },
+                '&:active': {
+                  backgroundColor: `#efebef`,
+                },
+              },
+            },
+            {
+              props: { variant: 'outlined', disabled: true },
+              style: {
+                opacity: '1 !important',
+                borderColor: '#e7e2e7',
+                '& *': {
+                  color: '#a8a4a8',
+                },
+              },
+            },
+          ],
+        },
+      },
+    },
   },
 });
 
