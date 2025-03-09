@@ -1,3 +1,4 @@
+import AsideDashboard from '@/components/aside-dashboard';
 import FiltersDashboard from '@/components/filters-dashboard';
 import MainRechart from '@/components/recharts/main-recharts';
 import { data } from '@/components/recharts/main-recharts/data-mock';
@@ -11,7 +12,9 @@ const DashboardPage = () => {
         <FiltersDashboard />
         <MainRechart data={data} tagsSelected={[EnumFiltersTags.CLIENTS]} />
       </Grid2>
-      <Grid2 component="aside" size={{ md: 3 }}></Grid2>
+      <Grid2 component="aside" size={{ md: 3 }}>
+        <AsideDashboard />
+      </Grid2>
     </Grid2>
   );
 };
