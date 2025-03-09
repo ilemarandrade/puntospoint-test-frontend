@@ -20,7 +20,6 @@ const FiltersByDates: React.FC<IProps> = ({ onChangeFilter }) => {
     subParameterActive,
     onParameter,
     onSubParameter,
-    title,
     subParameters,
     onTags,
     tags,
@@ -37,7 +36,6 @@ const FiltersByDates: React.FC<IProps> = ({ onChangeFilter }) => {
 
   return (
     <div className="space-y-12">
-      <p className="text-xl font-semibold text-black">{title}</p>
       <div className="flex gap-3">
         {filtersByDates.map((item) => (
           <Fragment key={item.label}>

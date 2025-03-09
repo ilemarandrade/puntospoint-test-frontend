@@ -12,7 +12,6 @@ export enum EnumDateMainParameters {
 export interface IFiltersByDates {
   parameter: EnumDateMainParameters;
   label: string;
-  title: string;
   subParameters?:
     | IThisWeekSubParameters[]
     | IThisMonthSubParameters[]

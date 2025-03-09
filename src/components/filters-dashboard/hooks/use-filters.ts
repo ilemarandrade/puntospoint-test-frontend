@@ -11,7 +11,6 @@ const useFilters: () => {
   subParameterActive: string;
   onParameter: (parameter: EnumDateMainParameters) => void;
   onSubParameter: (subParameter: string) => void;
-  title?: string;
   subParameters?:
     | IThisWeekSubParameters[]
     | IThisMonthSubParameters[]
@@ -64,21 +63,12 @@ const useFilters: () => {
     return currentSubParameters;
   }, [parameterActive]);
 
-  const title = useMemo(() => {
-    const currentParameter = filtersByDates.find(
-      (item) => item.parameter === parameterActive
-    );
-
-    return currentParameter?.title;
-  }, [parameterActive]);
-
   return {
     parameterActive,
     subParameterActive,
     onParameter: handleClickParameter,
     onSubParameter: handleClickSubParameter,
     subParameters,
-    title,
     tags,
     onTags: handleClickTag,
   };

@@ -65,12 +65,10 @@ export const filtersByDates: IFiltersByDates[] = [
   {
     parameter: EnumDateMainParameters.TODAY,
     label: 'Hoy',
-    title: 'Hoy',
   },
   {
     parameter: EnumDateMainParameters.THIS_WEEK,
     label: '7D',
-    title: '7 días',
     subParameters: [
       {
         name: EnumThisWeekSubParameters.ALL,
@@ -105,35 +103,29 @@ export const filtersByDates: IFiltersByDates[] = [
   {
     parameter: EnumDateMainParameters.THIS_MONTH,
     label: 'Este mes',
-    title: 'Este mes',
   },
   {
     parameter: EnumDateMainParameters.THIS_SEMESTER,
     label: '6M',
-    title: '6 Meses',
     subParameters: monthsFilters,
   },
   {
     parameter: EnumDateMainParameters.YTD_YTG,
     label: 'YTD / YTG',
-    title: 'YTD',
   },
   {
     parameter: EnumDateMainParameters.THIS_YEAR,
     label: '1A',
-    title: '1 Año',
     subParameters: monthsFilters,
   },
   {
     parameter: EnumDateMainParameters.MAX,
     label: 'MAX',
-    title: 'Max',
     subParameters: [2020, 2021, 2022, 2023, 2024, 2025],
   },
   {
     parameter: EnumDateMainParameters.CUSTOM,
     label: 'Personalizado',
-    title: 'Personalizado',
   },
 ];
 
