@@ -1,3 +1,5 @@
+'use client';
+
 import React, { Fragment, useEffect } from 'react';
 import Chip from '../chip';
 import { filtersByDates } from '@/constants/filters-options';
@@ -14,7 +16,7 @@ interface IProps {
   }) => void;
 }
 
-const FiltersByDates: React.FC<IProps> = ({ onChangeFilter }) => {
+const FiltersByDashboard: React.FC<IProps> = ({ onChangeFilter }) => {
   const {
     parameterActive,
     subParameterActive,
@@ -64,4 +66,4 @@ const FiltersByDates: React.FC<IProps> = ({ onChangeFilter }) => {
   );
 };
 
-export default FiltersByDates;
+export default FiltersByDashboard;
