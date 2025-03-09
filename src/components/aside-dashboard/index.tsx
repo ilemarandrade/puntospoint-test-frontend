@@ -22,7 +22,7 @@ const AsideDashboard = () => {
         <ButtonBase className="h-12 w-12" onClick={toggleCollapse}>
           <ArrowBackIosNewRoundedIcon
             fontSize="medium"
-            className={` ${isCollapsed ? '-rotate-[270deg]' : '-rotate-90'}`}
+            className={` ${!isCollapsed ? '-rotate-[270deg]' : '-rotate-90'}`}
           />
         </ButtonBase>
       </div>

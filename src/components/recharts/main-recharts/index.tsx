@@ -25,13 +25,15 @@ import { exportTableCsv } from '@/utils/export-table-csv';
 import { env } from '@/root/env';
 
 interface IProps {
-  tagsSelected: EnumFiltersTags[];
-  data: ISalesData[];
+  tagsSelected?: EnumFiltersTags[];
+  data?: ISalesData[];
 }
-export default function MainRechart({ tagsSelected, data }: IProps) {
+export default function MainRechart({ tagsSelected = [], data }: IProps) {
   const isTest = useMemo(() => env.NODE_ENV === 'test', []);
 
   const exportTable = () => {
+    if (!data?.length) return;
+
     const currenTags = mainRechartConfig.filter((row) =>
       tagsSelected.includes(row.id)
     );
@@ -55,7 +57,7 @@ export default function MainRechart({ tagsSelected, data }: IProps) {
       >
         <CartesianGrid vertical={false} />
         <XAxis
-          dataKey="Xaxis"
+          dataKey="date"
           className="text-xs"
           axisLine={{
             stroke: '#D9D9D9',
@@ -158,6 +160,7 @@ export default function MainRechart({ tagsSelected, data }: IProps) {
           onClick={exportTable}
           startIcon={<Download fontSize="small" />}
           data-testid="export-table"
+          disabled={!data?.length}
         >
           Exportar tabla
         </Button>
