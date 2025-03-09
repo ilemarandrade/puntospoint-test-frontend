@@ -1,8 +1,11 @@
 import { createTheme } from '@mui/material';
 
-declare module '@mui/material/TableContainer' {
+declare module '@mui/material' {
   interface TableContainerOwnProps {
     numberOfColumns: number;
+  }
+  interface ChipPropsVariantOverrides {
+    text: true;
   }
 }
 
@@ -104,7 +107,8 @@ const theme = createTheme({
           gap: 8,
           minWidth: 60,
           borderRadius: 8,
-
+          fontWeight: 500,
+          color: '#1D192B',
           variants: [
             {
               props: { variant: 'filled' },
@@ -154,6 +158,22 @@ const theme = createTheme({
                 borderColor: '#e7e2e7',
                 '& *': {
                   color: '#a8a4a8',
+                },
+              },
+            },
+            {
+              props: { variant: 'text' },
+              style: {
+                backgroundColor: 'transparent',
+                borderWidth: 0,
+                '&:hover': {
+                  backgroundColor: `#efebef`,
+                },
+                '&:focus': {
+                  backgroundColor: `#efebef`,
+                },
+                '&:active': {
+                  backgroundColor: `#efebef`,
                 },
               },
             },
