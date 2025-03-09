@@ -7,6 +7,11 @@ declare module '@mui/material' {
   interface ChipPropsVariantOverrides {
     text: true;
   }
+
+  interface ChipOwnProps {
+    hasIcon?: boolean;
+    hasDeleteIcon?: boolean;
+  }
 }
 
 const palette = {
@@ -103,9 +108,8 @@ const theme = createTheme({
           color: 'rgba(0, 0, 0, 0.87)',
         },
         root: {
-          padding: '6px 8px',
+          padding: '6px 12px',
           gap: 8,
-          minWidth: 60,
           borderRadius: 8,
           fontWeight: 500,
           color: '#1D192B',
@@ -175,6 +179,18 @@ const theme = createTheme({
                 '&:active': {
                   backgroundColor: `#efebef`,
                 },
+              },
+            },
+            {
+              props: { hasIcon: true },
+              style: {
+                paddingLeft: 8,
+              },
+            },
+            {
+              props: { icon: true },
+              style: {
+                paddingRight: 8,
               },
             },
           ],
