@@ -3,20 +3,16 @@
 import React, { Fragment, useEffect } from 'react';
 import Chip from '../chip';
 import { filtersByDates } from '@/constants/filters-options';
-import { EnumDateMainParameters } from '@/types/filters';
 import SubParameter from './sub-parameters';
 import useFilters from './hooks/use-filters';
 import FiltersTags from './filters-tags';
+import { IFiltersDasboard } from '@/types/recharts';
 
 interface IProps {
-  onChangeFilter?: (params: {
-    parameter: EnumDateMainParameters;
-    subParameter: string;
-    tags: string[];
-  }) => void;
+  onChangeFilter?: (params: IFiltersDasboard) => void;
 }
 
-const FiltersByDashboard: React.FC<IProps> = ({ onChangeFilter }) => {
+const FiltersDashboard: React.FC<IProps> = ({ onChangeFilter }) => {
   const {
     parameterActive,
     subParameterActive,
@@ -66,4 +62,4 @@ const FiltersByDashboard: React.FC<IProps> = ({ onChangeFilter }) => {
   );
 };
 
-export default FiltersByDashboard;
+export default FiltersDashboard;

@@ -1,6 +1,7 @@
 import { filtersByDates } from '@/constants/filters-options';
 import {
   EnumDateMainParameters,
+  EnumFiltersTags,
   IThisMonthSubParameters,
   IThisWeekSubParameters,
 } from '@/types/filters';
@@ -15,14 +16,16 @@ const useFilters: () => {
     | IThisWeekSubParameters[]
     | IThisMonthSubParameters[]
     | number[];
-  tags: string[];
-  onTags: (tag: string) => void;
+  tags: EnumFiltersTags[];
+  onTags: (tag: EnumFiltersTags) => void;
 } = () => {
   const [parameterActive, setParameterActive] = useState(
     EnumDateMainParameters.TODAY
   );
   const [subParameterActive, setSubParameterActive] = useState<string>('');
-  const [tags, setTags] = useState<string[]>([]);
+  const [tags, setTags] = useState<EnumFiltersTags[]>([
+    EnumFiltersTags.CLIENTS,
+  ]);
 
   const handleClickParameter = useCallback(
     (parameter: EnumDateMainParameters) => {
@@ -36,7 +39,7 @@ const useFilters: () => {
   }, []);
 
   const handleClickTag = useCallback(
-    (tag: string) => {
+    (tag: EnumFiltersTags) => {
       if (tags.includes(tag)) {
         setTags((prev) => prev.filter((item) => item !== tag));
       } else {

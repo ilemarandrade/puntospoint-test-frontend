@@ -1,7 +1,13 @@
 import { Payload } from 'recharts/types/component/DefaultLegendContent';
-import { EnumFiltersTags } from './filters';
+import { EnumDateMainParameters, EnumFiltersTags } from './filters';
 
 export type TagsType = { [key in EnumFiltersTags]: Array<Payload> };
+
+export interface IFiltersDasboard {
+  parameter: EnumDateMainParameters;
+  subParameter: string;
+  tags: EnumFiltersTags[];
+}
 
 export interface ISalesData {
   date: string;
