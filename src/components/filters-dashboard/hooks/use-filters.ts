@@ -1,9 +1,9 @@
-import { filtersByDates } from '@/constants/filters-by-dates';
+import { filtersByDates } from '@/constants/filters-options';
 import {
   EnumDateMainParameters,
   IThisMonthSubParameters,
   IThisWeekSubParameters,
-} from '@/types/filters-by-dates';
+} from '@/types/filters';
 import { useCallback, useMemo, useState } from 'react';
 
 const useFilters: () => {

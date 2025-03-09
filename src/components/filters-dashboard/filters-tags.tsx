@@ -1,7 +1,7 @@
-import { filterTags } from '@/constants/filters-by-dates';
+import { filterTags } from '@/constants/filters-options';
 import Chip from '../chip';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import { EnumFiltersTags } from '@/types/filters-by-dates';
+import { EnumFiltersTags } from '@/types/filters';
 import { useMemo } from 'react';
 
 interface IProps {

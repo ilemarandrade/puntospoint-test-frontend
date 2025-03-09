@@ -4,7 +4,7 @@ import {
   EnumThisMonthSubParameters,
   EnumThisWeekSubParameters,
   IFiltersByDates,
-} from '@/types/filters-by-dates';
+} from '@/types/filters';
 
 const monthsFilters = [
   {
