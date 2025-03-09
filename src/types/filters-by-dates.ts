@@ -56,3 +56,10 @@ export interface IThisWeekSubParameters
 
 export interface IThisMonthSubParameters
   extends ISubParameters<EnumThisMonthSubParameters> {}
+
+export enum EnumFiltersTags {
+  CLIENTS = 'CLIENTS',
+  TRANSACTIONS = 'TRANSACTIONS',
+  MONEY = 'MONEY',
+  CASHBACK = 'CASHBACK',
+}

@@ -1,5 +1,6 @@
 import {
   EnumDateMainParameters,
+  EnumFiltersTags,
   EnumThisMonthSubParameters,
   EnumThisWeekSubParameters,
   IFiltersByDates,
@@ -135,3 +136,26 @@ export const filtersByDates: IFiltersByDates[] = [
     title: 'Personalizado',
   },
 ];
+
+export const filterTags = {
+  firstGroup: [
+    {
+      label: 'Clientes',
+      value: EnumFiltersTags.CLIENTS,
+    },
+    {
+      label: 'Transacciones',
+      value: EnumFiltersTags.TRANSACTIONS,
+    },
+  ],
+  secondGroup: [
+    {
+      label: 'Dinero',
+      value: EnumFiltersTags.MONEY,
+    },
+    {
+      label: 'Cashback',
+      value: EnumFiltersTags.CASHBACK,
+    },
+  ],
+};

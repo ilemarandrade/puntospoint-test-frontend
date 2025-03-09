@@ -4,11 +4,13 @@ import { filtersByDates } from '@/constants/filters-by-dates';
 import { EnumDateMainParameters } from '@/types/filters-by-dates';
 import SubParameter from './sub-parameters';
 import useFilters from './hooks/use-filters';
+import FiltersTags from './filters-tags';
 
 interface IProps {
   onChangeFilter?: (params: {
     parameter: EnumDateMainParameters;
     subParameter: string;
+    tags: string[];
   }) => void;
 }
 
@@ -20,6 +22,8 @@ const FiltersByDates: React.FC<IProps> = ({ onChangeFilter }) => {
     onSubParameter,
     title,
     subParameters,
+    onTags,
+    tags,
   } = useFilters();
 
   useEffect(() => {
@@ -27,8 +31,9 @@ const FiltersByDates: React.FC<IProps> = ({ onChangeFilter }) => {
       onChangeFilter({
         parameter: parameterActive,
         subParameter: subParameterActive,
+        tags,
       });
-  }, [onChangeFilter, parameterActive, subParameterActive]);
+  }, [onChangeFilter, parameterActive, subParameterActive, tags]);
 
   return (
     <div className="space-y-12">
@@ -55,6 +60,8 @@ const FiltersByDates: React.FC<IProps> = ({ onChangeFilter }) => {
           />
         ))}
       </div>
+
+      <FiltersTags onTags={onTags} tags={tags} />
     </div>
   );
 };
