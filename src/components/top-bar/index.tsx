@@ -1,3 +1,5 @@
+'use client';
+
 import { linksMenu } from '@/constants/links-menu';
 import { AppBar } from '@mui/material';
 import Grid from '@mui/material/Grid2';
@@ -10,7 +12,7 @@ const TopBar = () => {
   const pathname = usePathname();
 
   return (
-    <AppBar position="fixed">
+    <AppBar position="sticky">
       <Grid container spacing={2}>
         <Grid size={{ xs: 0, sm: 0, lg: 3 }} container alignItems="center">
           <Image
