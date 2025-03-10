@@ -61,6 +61,52 @@ const monthsFilters = [
   },
 ];
 
+export const monthsInNumber = {
+  [EnumThisMonthSubParameters.JANUARY]: 0,
+  [EnumThisMonthSubParameters.FEBRUARY]: 1,
+  [EnumThisMonthSubParameters.MARCH]: 2,
+  [EnumThisMonthSubParameters.APRIL]: 3,
+  [EnumThisMonthSubParameters.MAY]: 4,
+  [EnumThisMonthSubParameters.JUNE]: 5,
+  [EnumThisMonthSubParameters.JULY]: 6,
+  [EnumThisMonthSubParameters.AUGUST]: 7,
+  [EnumThisMonthSubParameters.SEPTEMBER]: 8,
+  [EnumThisMonthSubParameters.OCTOBER]: 9,
+  [EnumThisMonthSubParameters.NOVEMBER]: 10,
+  [EnumThisMonthSubParameters.DECEMBER]: 11,
+};
+
+const yearsFilters = [
+  {
+    name: EnumThisMonthSubParameters.ALL,
+    label: 'Todo',
+  },
+  {
+    name: '2020',
+    label: '2020',
+  },
+  {
+    name: '2021',
+    label: '2021',
+  },
+  {
+    name: '2022',
+    label: '2022',
+  },
+  {
+    name: '2023',
+    label: '2023',
+  },
+  {
+    name: '2024',
+    label: '2024',
+  },
+  {
+    name: '2025',
+    label: '2025',
+  },
+];
+
 export const filtersByDates: IFiltersByDates[] = [
   {
     parameter: EnumDateMainParameters.TODAY,
@@ -98,6 +144,10 @@ export const filtersByDates: IFiltersByDates[] = [
         name: EnumThisWeekSubParameters.SATURDAY,
         label: 'Sábado',
       },
+      {
+        name: EnumThisWeekSubParameters.SUNDAY,
+        label: 'Domingo',
+      },
     ],
   },
   {
@@ -121,7 +171,7 @@ export const filtersByDates: IFiltersByDates[] = [
   {
     parameter: EnumDateMainParameters.MAX,
     label: 'MAX',
-    subParameters: [2020, 2021, 2022, 2023, 2024, 2025],
+    subParameters: yearsFilters,
   },
   {
     parameter: EnumDateMainParameters.CUSTOM,

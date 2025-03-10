@@ -9,7 +9,7 @@ export interface IFiltersDasboard {
   tags: EnumFiltersTags[];
 }
 
-export interface ISalesData {
+export interface IMovementsData {
   date: string;
   newCustomers: number;
   purchased: number;

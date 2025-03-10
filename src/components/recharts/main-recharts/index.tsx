@@ -19,14 +19,14 @@ import {
 } from '@/constants/main-rechart-config';
 import ContentLegend from './content-legend';
 import { EnumFiltersTags } from '@/types/filters';
-import { ISalesData } from '@/types/recharts';
+import { IMovementsData } from '@/types/recharts';
 import { Fragment, useMemo } from 'react';
 import { exportTableCsv } from '@/utils/export-table-csv';
 import { env } from '@/root/env';
 
 interface IProps {
   tagsSelected?: EnumFiltersTags[];
-  data?: ISalesData[];
+  data?: IMovementsData[];
 }
 export default function MainRechart({ tagsSelected = [], data }: IProps) {
   const isTest = useMemo(() => env.NODE_ENV === 'test', []);
@@ -85,7 +85,7 @@ export default function MainRechart({ tagsSelected = [], data }: IProps) {
               mainRechartConfig
                 .filter((item) => item.type === 'line')
                 .map((item) => item.keyAccessor)
-                .includes(payload.dataKey as keyof ISalesData)
+                .includes(payload.dataKey as keyof IMovementsData)
             ) {
               return [`$${Number(value).toLocaleString()}`, name];
             }
