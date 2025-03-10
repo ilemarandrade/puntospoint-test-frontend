@@ -9,8 +9,8 @@ interface IProps {
     totalSales: number;
     totalAmount: number;
     cashbackAccumulated: number;
-    invoiced: {
-      date: Date;
+    invoiced?: {
+      date: string;
       amount: number;
     }[];
   };
@@ -27,9 +27,12 @@ const CardPulso: React.FC<IProps> = ({ data, className }) => {
     date,
   } = data;
 
-  const formatDate = useCallback((date: Date) => {
-    const day = String(date.getDate()).padStart(2, '0');
-    const month = String(date.getMonth() + 1).padStart(2, '0');
+  const formatDate = useCallback((date: string) => {
+    if (!date) return '';
+
+    const dateObj = new Date(date);
+    const day = String(dateObj.getDate()).padStart(2, '0');
+    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
     return `${day}/${month}`;
   }, []);
 
