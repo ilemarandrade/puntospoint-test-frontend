@@ -15,7 +15,7 @@ export interface IFiltersByDates {
   subParameters?:
     | IThisWeekSubParameters[]
     | IThisMonthSubParameters[]
-    | number[];
+    | IYearsParamerters[];
 }
 
 export enum EnumThisWeekSubParameters {
@@ -55,6 +55,11 @@ export interface IThisWeekSubParameters
 
 export interface IThisMonthSubParameters
   extends ISubParameters<EnumThisMonthSubParameters> {}
+
+export interface IYearsParamerters {
+  label: string;
+  name: string;
+}
 
 export enum EnumFiltersTags {
   CLIENTS = 'CLIENTS',

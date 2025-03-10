@@ -4,6 +4,7 @@ import {
   EnumFiltersTags,
   IThisMonthSubParameters,
   IThisWeekSubParameters,
+  IYearsParamerters,
 } from '@/types/filters';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -15,7 +16,7 @@ const useFilters: () => {
   subParameters?:
     | IThisWeekSubParameters[]
     | IThisMonthSubParameters[]
-    | number[];
+    | IYearsParamerters[];
   tags: EnumFiltersTags[];
   onTags: (tag: EnumFiltersTags) => void;
 } = () => {
@@ -55,10 +56,7 @@ const useFilters: () => {
     )?.subParameters;
 
     if (currentSubParameters?.length) {
-      const newSubParameter =
-        typeof currentSubParameters?.[0] === 'number'
-          ? `${currentSubParameters?.[0]}`
-          : currentSubParameters?.[0]?.name;
+      const newSubParameter = currentSubParameters?.[0]?.name;
 
       setSubParameterActive(newSubParameter);
     }
