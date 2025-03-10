@@ -55,12 +55,12 @@ const useFilters: () => {
     )?.subParameters;
 
     if (currentSubParameters?.length) {
-      const firstSubParameter =
+      const newSubParameter =
         typeof currentSubParameters?.[0] === 'number'
           ? `${currentSubParameters?.[0]}`
           : currentSubParameters?.[0]?.name;
 
-      setSubParameterActive(firstSubParameter);
+      setSubParameterActive(newSubParameter);
     }
 
     return currentSubParameters;
