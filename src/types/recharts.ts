@@ -1,16 +1,22 @@
 import { Payload } from 'recharts/types/component/DefaultLegendContent';
-import { EnumDateMainParameters, EnumFiltersTags } from './filters';
+import {
+  EnumDateMainParameters,
+  EnumFiltersTags,
+  EnumThisMonthSubParameters,
+} from './filters';
 
 export type TagsType = { [key in EnumFiltersTags]: Array<Payload> };
 
 export interface IFiltersDasboard {
-  parameter: EnumDateMainParameters;
-  subParameter: string;
-  tags: EnumFiltersTags[];
+  parameter?: EnumDateMainParameters;
+  subParameter?: string;
+  tags?: EnumFiltersTags[];
+  from?: Date | EnumThisMonthSubParameters;
+  to?: Date | EnumThisMonthSubParameters;
 }
 
 export interface IMovementsData {
-  date: string;
+  date: string | Date;
   newCustomers: number;
   purchased: number;
   notPurchased: number;
@@ -22,4 +28,8 @@ export interface IMovementsData {
   cashbackAccumulated: number;
   totalCashback: number;
   transactions: number;
+  invoiced?: {
+    date: string;
+    amount: number;
+  }[];
 }

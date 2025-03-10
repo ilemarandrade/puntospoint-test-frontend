@@ -1,3 +1,4 @@
+import { monthsInNumber } from '@/constants/filters-options';
 import { faker } from '@faker-js/faker';
 
 export const generateWeeklyData = () => {
@@ -260,6 +261,49 @@ export const generateMonthlyDataFrom2020To2025 = () => {
       totalCashback: faker.number.int({ min: 100, max: 2000 }),
       transactions: faker.number.int({ min: 10, max: 100 }),
     });
+  }
+
+  return data;
+};
+
+export const generateMonthlyDataByRange = (from: any, to: any) => {
+  const fromIndex = monthsInNumber[from as keyof typeof monthsInNumber];
+  const toIndex = monthsInNumber[to as keyof typeof monthsInNumber];
+
+  const data = [];
+
+  if (fromIndex <= toIndex) {
+    for (let month = fromIndex; month <= toIndex; month++) {
+      const date = new Date(2025, month, 1);
+      data.push({
+        date: date,
+        newCustomers: faker.number.int({ min: 50, max: 200 }),
+        purchased: faker.number.int({ min: 20, max: 100 }),
+        notPurchased: faker.number.int({ min: 5, max: 30 }),
+        totalCustomers: faker.number.int({ min: 200, max: 500 }),
+        totalMoney: faker.number.int({ min: 100000, max: 1000000 }),
+        sales: faker.number.int({ min: 1000, max: 10000 }),
+        returns: faker.number.int({ min: 100, max: 500 }),
+        cashbackGenerated: faker.number.int({ min: 50, max: 300 }),
+        cashbackAccumulated: faker.number.int({ min: 50, max: 1500 }),
+        totalCashback: faker.number.int({ min: 100, max: 2000 }),
+        transactions: faker.number.int({ min: 10, max: 100 }),
+        invoiced: [
+          {
+            date: new Date(date.setDate(1)),
+            amount: 1000,
+          },
+          {
+            date: new Date(date.setDate(10)),
+            amount: 1000,
+          },
+          {
+            date: new Date(date.setDate(20)),
+            amount: 1000,
+          },
+        ],
+      });
+    }
   }
 
   return data;
