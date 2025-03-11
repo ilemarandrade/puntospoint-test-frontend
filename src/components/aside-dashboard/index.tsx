@@ -7,9 +7,10 @@ import { ButtonBase } from '@mui/material';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import useGetMovements from '@/hooks/use-get-movements';
 import { EnumFiltersTags, EnumThisMonthSubParameters } from '@/types/filters';
+import CardPulsoSkeleton from '../card-pulso/card-pulso-skeleton';
 
 const AsideDashboard = () => {
-  const { data } = useGetMovements({
+  const { data, isLoading } = useGetMovements({
     filters: {
       tags: [
         EnumFiltersTags.CLIENTS,
@@ -57,6 +58,14 @@ const AsideDashboard = () => {
               />
             ))
           : null}
+
+        {isLoading && (
+          <div className="flex flex-col gap-4">
+            {[...Array(3)].map((_, index) => (
+              <CardPulsoSkeleton key={`card-skeleton-${index}`} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
