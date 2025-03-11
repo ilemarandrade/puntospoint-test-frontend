@@ -25,7 +25,7 @@ const Table = <IData,>({
   title,
   columns,
   data,
-  className,
+  className = '',
 }: IProps<IData>): React.ReactElement => {
   const numberOfColumns = columns.length;
   return (

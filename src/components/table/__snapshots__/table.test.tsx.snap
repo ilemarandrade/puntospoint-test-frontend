@@ -3,7 +3,7 @@
 exports[`Table Component renders the table with correct data 1`] = `
 <div>
   <div
-    class="p-4 bg-[#e6e1e6] rounded-[10px]"
+    class="p-4 bg-[#e6e1e6] rounded-[10px] "
   >
     <h4
       class="text-center text-sm mb-4 font-medium text-[#48454E]"
@@ -25,37 +25,37 @@ exports[`Table Component renders the table with correct data 1`] = `
             class="MuiTableRow-root MuiTableRow-head css-1xtozoh-MuiTableRow-root"
           >
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-bmnu5q-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-bmnu5q-MuiTableCell-root"
               scope="col"
             >
               First Name
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-bmnu5q-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-bmnu5q-MuiTableCell-root"
               scope="col"
             >
               Last Name
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-bmnu5q-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-bmnu5q-MuiTableCell-root"
               scope="col"
             >
               Age
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-bmnu5q-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-bmnu5q-MuiTableCell-root"
               scope="col"
             >
               Visits
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-bmnu5q-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-bmnu5q-MuiTableCell-root"
               scope="col"
             >
               Status
             </th>
             <th
-              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium css-bmnu5q-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-head MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-bmnu5q-MuiTableCell-root"
               scope="col"
             >
               Profile Progress
@@ -70,14 +70,14 @@ exports[`Table Component renders the table with correct data 1`] = `
           >
             <td
               aria-label="tanner"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               tanner
             </td>
             <td
               aria-label="linsley"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               <i>
@@ -85,26 +85,29 @@ exports[`Table Component renders the table with correct data 1`] = `
               </i>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              aria-label="24"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               24
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              aria-label="100"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               100
             </td>
             <td
               aria-label="In Relationship"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               In Relationship
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              aria-label="50"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               50
@@ -115,14 +118,14 @@ exports[`Table Component renders the table with correct data 1`] = `
           >
             <td
               aria-label="tandy"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               tandy
             </td>
             <td
               aria-label="miller"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               <i>
@@ -130,26 +133,29 @@ exports[`Table Component renders the table with correct data 1`] = `
               </i>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              aria-label="40"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               40
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              aria-label="40"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               40
             </td>
             <td
               aria-label="Single"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               Single
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              aria-label="80"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               80
@@ -160,14 +166,14 @@ exports[`Table Component renders the table with correct data 1`] = `
           >
             <td
               aria-label="joe"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               joe
             </td>
             <td
               aria-label="dirte"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               <i>
@@ -175,26 +181,29 @@ exports[`Table Component renders the table with correct data 1`] = `
               </i>
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              aria-label="45"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               45
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              aria-label="20"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               20
             </td>
             <td
               aria-label="Complicated"
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               Complicated
             </td>
             <td
-              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium css-14y13q2-MuiTableCell-root"
+              aria-label="10"
+              class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignCenter MuiTableCell-sizeMedium text-nowrap css-14y13q2-MuiTableCell-root"
               data-mui-internal-clone-element="true"
             >
               10
