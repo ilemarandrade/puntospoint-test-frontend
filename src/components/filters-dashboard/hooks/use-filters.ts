@@ -1,4 +1,4 @@
-import { filtersByDates } from '@/constants/filters-options';
+import { filtersByDates, filterTags } from '@/constants/filters-options';
 import {
   EnumDateMainParameters,
   EnumFiltersTags,
@@ -41,11 +41,25 @@ const useFilters: () => {
 
   const handleClickTag = useCallback(
     (tag: EnumFiltersTags) => {
-      if (tags.includes(tag)) {
-        setTags((prev) => prev.filter((item) => item !== tag));
-      } else {
-        setTags((prev) => [...prev, tag]);
+      const group = Object.values(filterTags).find((group) =>
+        group.some((item) => item.value === tag)
+      );
+
+      if (!group) return;
+
+      const selectedGroupTags = group.filter((item) =>
+        tags.includes(item.value)
+      );
+
+      if (selectedGroupTags.length > 0) {
+        setTags((prev) =>
+          prev.filter(
+            (item) => !selectedGroupTags.map((t) => t.value).includes(item)
+          )
+        );
       }
+
+      setTags((prev) => [...prev, tag]);
     },
     [tags]
   );
