@@ -26,8 +26,6 @@ const DashboardPage = () => {
     );
   }, [filters?.parameter, filters?.subParameter]);
 
-  console.log({ titleDate });
-
   return (
     <Grid2 container component="main" className="py-8 px-16" spacing={3}>
       <Grid2 component="section" size={{ md: 9 }} className="space-y-8">
