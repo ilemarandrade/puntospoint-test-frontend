@@ -68,7 +68,6 @@ export const filtersByDates: IFiltersByDates[] = [
     parameter: EnumDateMainParameters.THIS_WEEK,
     label: '7D',
     subParameters: [
-      { name: EnumThisWeekSubParameters.ALL, label: 'Todo' },
       ...Object.values(EnumThisWeekSubParameters).map((day) => ({
         name: day,
         label: weekDaysSpanish[day],
@@ -110,7 +109,7 @@ export const titleTableDate = {
   [EnumDateMainParameters.THIS_MONTH]: { title: 'Este mes', header: 'Días' },
   [EnumDateMainParameters.THIS_SEMESTER]: { title: '6 meses', header: 'Meses' },
   [EnumDateMainParameters.YTD_YTG]: { title: 'YTD / YTG', header: 'Meses' },
-  [EnumDateMainParameters.THIS_YEAR]: { title: '1A', header: 'Meses' },
+  [EnumDateMainParameters.THIS_YEAR]: { title: '1 Año', header: 'Meses' },
   [EnumDateMainParameters.MAX]: { title: 'MAX', header: 'Años' },
   [EnumDateMainParameters.CUSTOM]: {
     title: 'Personalizado',
