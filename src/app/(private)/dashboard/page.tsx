@@ -13,7 +13,7 @@ import { useCallback, useMemo, useState } from 'react';
 const DashboardPage = () => {
   const [filters, setFilters] = useState<IFiltersDasboard>();
 
-  const { data } = useGetMovements({ filters });
+  const { data, isLoading } = useGetMovements({ filters });
 
   const onChangeFilter = useCallback((filter: IFiltersDasboard) => {
     setFilters(filter);
@@ -33,7 +33,11 @@ const DashboardPage = () => {
       <Grid2 component="section" size={{ md: 9 }} className="space-y-8">
         <FiltersDashboard onChangeFilter={onChangeFilter} />
 
-        <MainRechart data={data} tagsSelected={filters?.tags} />
+        <MainRechart
+          data={data}
+          tagsSelected={filters?.tags}
+          isLoading={isLoading}
+        />
 
         <DashboardTable
           data={data}
@@ -42,6 +46,7 @@ const DashboardPage = () => {
           headerDate={titleDate?.header}
           subParameter={filters?.subParameter}
           formatDate={titleDate?.format}
+          isLoading={isLoading}
         />
       </Grid2>
 

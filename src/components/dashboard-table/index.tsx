@@ -18,6 +18,7 @@ interface IProps {
   headerDate?: string;
   subParameter?: string;
   formatDate?: (date: string) => string;
+  isLoading?: boolean;
 }
 
 const DashboardTable: React.FC<IProps> = ({
@@ -26,6 +27,7 @@ const DashboardTable: React.FC<IProps> = ({
   titleDate = '',
   headerDate = '',
   formatDate,
+  isLoading,
 }) => {
   const dataPreparedToMonthsAndDays = useMemo(() => {
     if (formatDate) {

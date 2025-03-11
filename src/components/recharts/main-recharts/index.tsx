@@ -28,8 +28,13 @@ import formatAmount from '@/utils/format-amount';
 interface IProps {
   tagsSelected?: EnumFiltersTags[];
   data?: IMovementsData[];
+  isLoading?: boolean;
 }
-export default function MainRechart({ tagsSelected = [], data }: IProps) {
+export default function MainRechart({
+  tagsSelected = [],
+  data,
+  isLoading,
+}: IProps) {
   const isTest = useMemo(() => env.NODE_ENV === 'test', []);
 
   const exportTable = () => {
@@ -140,7 +145,15 @@ export default function MainRechart({ tagsSelected = [], data }: IProps) {
 
   return (
     <div className="w-full relative">
-      <div className="h-[500px] w-full pb-6">
+      <div
+        className={` ${
+          isLoading
+            ? 'absolute top-0 left-0 w-full h-full animate-pulse bg-gray-200 rounded-md'
+            : ''
+        }`}
+      ></div>
+
+      <div className={`h-[500px] w-full pb-6 ${isLoading ? 'invisible' : ''}`}>
         {isTest ? (
           renderChart
         ) : (
@@ -155,17 +168,19 @@ export default function MainRechart({ tagsSelected = [], data }: IProps) {
         )}
       </div>
 
-      <div className="absolute bottom-0 right-8">
-        <Button
-          variant="text"
-          onClick={exportTable}
-          startIcon={<Download fontSize="small" />}
-          data-testid="export-table"
-          disabled={!data?.length}
-        >
-          Exportar tabla
-        </Button>
-      </div>
+      {!isLoading && (
+        <div className="absolute bottom-0 right-8">
+          <Button
+            variant="text"
+            onClick={exportTable}
+            startIcon={<Download fontSize="small" />}
+            data-testid="export-table"
+            disabled={!data?.length}
+          >
+            Exportar tabla
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
