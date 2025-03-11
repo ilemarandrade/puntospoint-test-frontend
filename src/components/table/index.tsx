@@ -10,29 +10,29 @@ import { Tooltip } from '@mui/material';
 export type Column<T> = {
   header: string;
   keyAccessor: keyof T;
-  render?: (row: TypeData<T>) => React.ReactNode;
-  renderTooltip?: (row: TypeData<T>) => React.ReactNode;
+  render?: (row: T) => React.ReactNode;
+  renderTooltip?: (row: T) => React.ReactNode;
 };
-
-type TypeData<IData> = { [key in keyof IData]: string | number };
 
 interface IProps<IData> {
   title: string;
   columns: Column<IData>[];
-  data: TypeData<IData>[];
+  data: IData[];
+  className?: string;
 }
 
 const Table = <IData,>({
   title,
   columns,
   data,
+  className,
 }: IProps<IData>): React.ReactElement => {
   const numberOfColumns = columns.length;
   return (
     <div
       className={`${
         numberOfColumns !== 1 ? 'p-4' : 'py-4 px-1.5'
-      } bg-[#e6e1e6] rounded-[10px]`}
+      } bg-[#e6e1e6] rounded-[10px] ${className}`}
     >
       <h4 className="text-center text-sm mb-4 font-medium text-[#48454E]">
         {title}
@@ -42,7 +42,7 @@ const Table = <IData,>({
           <TableHead>
             <TableRow>
               {columns.map((column, index) => (
-                <TableCell align="center" key={index}>
+                <TableCell align="center" key={index} className="text-nowrap">
                   {column.header}
                 </TableCell>
               ))}
@@ -56,14 +56,18 @@ const Table = <IData,>({
               >
                 {columns.map((column, colIndex) => (
                   <Tooltip
-                    title={
+                    title={String(
                       column.renderTooltip
                         ? column.renderTooltip(row)
                         : row[column.keyAccessor]
-                    }
+                    )}
                     key={colIndex}
                   >
-                    <TableCell align="center" key={colIndex}>
+                    <TableCell
+                      align="center"
+                      key={colIndex}
+                      className="text-nowrap"
+                    >
                       <>
                         {column.render
                           ? column.render(row)
