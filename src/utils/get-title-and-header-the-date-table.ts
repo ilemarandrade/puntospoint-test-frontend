@@ -13,8 +13,14 @@ import {
 export const getTitleAndHeaderTheDateTable = (
   parameter?: string,
   subParameter = EnumThisWeekSubParameters.ALL as string
-) => {
+): {
+  title: string;
+  header: string;
+  format?: (date: string) => string;
+} => {
   if (!parameter) return { title: '', header: '' };
+  const formatToGetFirtsValueDate = (date: string) =>
+    date.split(' ')[0].charAt(0).toUpperCase() + date.split(' ')[0].slice(1);
 
   switch (parameter) {
     case EnumDateMainParameters.TODAY:
@@ -28,15 +34,17 @@ export const getTitleAndHeaderTheDateTable = (
           }
         : titleTableDate[EnumDateMainParameters.THIS_WEEK];
     case EnumDateMainParameters.THIS_MONTH:
-      return subParameter !== EnumThisWeekSubParameters.ALL
-        ? titleTableDate[EnumDateMainParameters.THIS_MONTH]
-        : titleTableDate[EnumDateMainParameters.THIS_MONTH];
+      return {
+        ...titleTableDate[EnumDateMainParameters.THIS_MONTH],
+        format: formatToGetFirtsValueDate,
+      };
 
     case EnumDateMainParameters.THIS_SEMESTER:
       return subParameter !== EnumThisWeekSubParameters.ALL
         ? {
             header: titleTableDate[EnumDateMainParameters.THIS_MONTH].header,
             title: monthsSpanish[subParameter as keyof typeof monthsSpanish],
+            format: formatToGetFirtsValueDate,
           }
         : titleTableDate[EnumDateMainParameters.THIS_SEMESTER];
 
@@ -45,12 +53,20 @@ export const getTitleAndHeaderTheDateTable = (
         ? {
             header: titleTableDate[EnumDateMainParameters.THIS_MONTH].header,
             title: monthsSpanish[subParameter as keyof typeof monthsSpanish],
+            format: formatToGetFirtsValueDate,
           }
-        : titleTableDate[EnumDateMainParameters.THIS_YEAR];
+        : {
+            ...titleTableDate[EnumDateMainParameters.THIS_YEAR],
+            format: formatToGetFirtsValueDate,
+          };
 
     case EnumDateMainParameters.MAX:
       return subParameter !== EnumThisWeekSubParameters.ALL
-        ? titleTableDate[EnumDateMainParameters.THIS_MONTH]
+        ? {
+            header: titleTableDate[EnumDateMainParameters.THIS_MONTH].header,
+            title: monthsSpanish[subParameter as keyof typeof monthsSpanish],
+            format: formatToGetFirtsValueDate,
+          }
         : titleTableDate[EnumDateMainParameters.MAX];
 
     case EnumDateMainParameters.CUSTOM:

@@ -9,12 +9,15 @@ import {
   columnsMoney,
   columnsTransactions,
 } from '@/constants/tables/columns';
+import { useMemo } from 'react';
 
 interface IProps {
   data?: IMovementsData[];
   tagsSelected?: EnumFiltersTags[];
   titleDate?: string;
   headerDate?: string;
+  subParameter?: string;
+  formatDate?: (date: string) => string;
 }
 
 const DashboardTable: React.FC<IProps> = ({
@@ -22,7 +25,19 @@ const DashboardTable: React.FC<IProps> = ({
   tagsSelected = [],
   titleDate = '',
   headerDate = '',
+  formatDate,
 }) => {
+  const dataPreparedToMonthsAndDays = useMemo(() => {
+    if (formatDate) {
+      return data?.map((row) => ({
+        ...row,
+        date: typeof row.date === 'string' ? formatDate(row.date) : row.date,
+      }));
+    }
+
+    return data;
+  }, [data, formatDate]);
+
   const {
     itemsPerPage,
     currentPage,
@@ -35,10 +50,11 @@ const DashboardTable: React.FC<IProps> = ({
     goToPage,
     setItemsPerPage,
   } = usePagination({
-    data: data || [],
+    data: dataPreparedToMonthsAndDays || [],
     initialItemsPerPage: 10,
     initialPage: 1,
   });
+
   if (!data?.length) return null;
 
   return (

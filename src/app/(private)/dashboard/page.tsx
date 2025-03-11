@@ -40,6 +40,8 @@ const DashboardPage = () => {
           tagsSelected={filters?.tags}
           titleDate={titleDate?.title}
           headerDate={titleDate?.header}
+          subParameter={filters?.subParameter}
+          formatDate={titleDate?.format}
         />
       </Grid2>
 
