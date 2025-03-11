@@ -17,12 +17,10 @@ const AsideDashboard = () => {
         EnumFiltersTags.TRANSACTIONS,
         EnumFiltersTags.CASHBACK,
       ],
-      from: EnumThisMonthSubParameters.MARCH,
-      to: EnumThisMonthSubParameters.MAY,
+      from: EnumThisMonthSubParameters.JANUARY,
+      to: EnumThisMonthSubParameters.MARCH,
     },
   });
-
-  console.log({ data });
 
   const [isCollapsed, setIsCollapsed] = useState(false);
 

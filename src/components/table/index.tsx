@@ -54,28 +54,29 @@ const Table = <IData,>({
                 key={rowIndex}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-                {columns.map((column, colIndex) => (
-                  <Tooltip
-                    title={String(
-                      column.renderTooltip
-                        ? column.renderTooltip(row)
-                        : row[column.keyAccessor]
-                    )}
-                    key={colIndex}
-                  >
-                    <TableCell
-                      align="center"
+                {columns.map((column, colIndex) => {
+                  const value = column.render
+                    ? column.render(row)
+                    : row[column.keyAccessor];
+                  return (
+                    <Tooltip
+                      title={String(
+                        column.renderTooltip
+                          ? column.renderTooltip(row)
+                          : row[column.keyAccessor]
+                      )}
                       key={colIndex}
-                      className="text-nowrap"
                     >
-                      <>
-                        {column.render
-                          ? column.render(row)
-                          : row[column.keyAccessor]}
-                      </>
-                    </TableCell>
-                  </Tooltip>
-                ))}
+                      <TableCell
+                        align="center"
+                        key={colIndex}
+                        className="text-nowrap"
+                      >
+                        <>{!!value ? value : '-'}</>
+                      </TableCell>
+                    </Tooltip>
+                  );
+                })}
               </TableRow>
             ))}
           </TableBody>

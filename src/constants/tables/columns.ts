@@ -1,5 +1,6 @@
 import { Column } from '@/components/table';
 import { IMovementsData } from '@/types/recharts';
+import formatAmount from '@/utils/format-amount';
 
 export const columnsDate: Column<IMovementsData>[] = [
   {
@@ -38,16 +39,16 @@ export const columnsMoney: Column<IMovementsData>[] = [
   {
     header: 'Total Dinero',
     keyAccessor: 'totalMoney',
-    render: (row) => `$${Number(row.totalMoney).toLocaleString()}`,
+    render: (row) => formatAmount(row.totalMoney),
   },
   {
     header: 'Ventas',
     keyAccessor: 'sales',
-    render: (row) => `$${Number(row.totalMoney).toLocaleString()}`,
+    render: (row) => formatAmount(row.sales),
   },
   {
     header: 'Devoluciones',
     keyAccessor: 'returns',
-    render: (row) => `$${Number(row.totalMoney).toLocaleString()}`,
+    render: (row) => formatAmount(row.returns),
   },
 ];

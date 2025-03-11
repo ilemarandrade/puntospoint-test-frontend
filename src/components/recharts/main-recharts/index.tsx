@@ -23,6 +23,7 @@ import { IMovementsData } from '@/types/recharts';
 import { Fragment, useMemo } from 'react';
 import { exportTableCsv } from '@/utils/export-table-csv';
 import { env } from '@/root/env';
+import formatAmount from '@/utils/format-amount';
 
 interface IProps {
   tagsSelected?: EnumFiltersTags[];
@@ -44,7 +45,7 @@ export default function MainRechart({ tagsSelected = [], data }: IProps) {
       currenTags.map((item) => row[item.keyAccessor])
     );
 
-    exportTableCsv({ headers, body });
+    exportTableCsv({ headers, body: body as string[][] });
   };
 
   const renderChart = useMemo(() => {
@@ -74,7 +75,7 @@ export default function MainRechart({ tagsSelected = [], data }: IProps) {
         <YAxis
           yAxisId="right"
           orientation="right"
-          tickFormatter={(value) => `$${(value / 1000000).toFixed(0)}M`}
+          tickFormatter={(value) => formatAmount(value)}
           className="text-xs"
           axisLine={false}
           tickLine={false}
