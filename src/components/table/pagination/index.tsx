@@ -31,7 +31,6 @@ const Pagination: React.FC<IProps> = ({
   totalPages,
   prevPage,
   nextPage,
-  goToPage,
   canPrevPage,
   canNextPage,
   setItemsPerPage,
