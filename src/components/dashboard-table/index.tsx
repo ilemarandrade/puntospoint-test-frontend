@@ -4,6 +4,7 @@ import { EnumFiltersTags } from '@/types/filters';
 import Pagination from '../table/pagination';
 import { usePagination } from '@/hooks/use-pagination';
 import {
+  columnsCashback,
   columnsClients,
   columnsDate,
   columnsMoney,
@@ -81,6 +82,13 @@ const DashboardTable: React.FC<IProps> = ({
         )}
         {tagsSelected.includes(EnumFiltersTags.MONEY) && (
           <Table title="Dinero" columns={columnsMoney} data={currentData} />
+        )}
+        {tagsSelected.includes(EnumFiltersTags.CASHBACK) && (
+          <Table
+            title="Cashback"
+            columns={columnsCashback}
+            data={currentData}
+          />
         )}
       </div>
       <Pagination

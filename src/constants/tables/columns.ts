@@ -52,3 +52,21 @@ export const columnsMoney: Column<IMovementsData>[] = [
     render: (row) => formatAmount(row.returns),
   },
 ];
+
+export const columnsCashback: Column<IMovementsData>[] = [
+  {
+    header: 'Cashback generado',
+    keyAccessor: 'cashbackGenerated',
+    render: (row) => formatAmount(row.totalMoney),
+  },
+  {
+    header: 'Cashback Acumulado',
+    keyAccessor: 'cashbackAccumulated',
+    render: (row) => formatAmount(row.sales),
+  },
+  {
+    header: 'Cashback Total',
+    keyAccessor: 'totalCashback',
+    render: (row) => formatAmount(row.returns),
+  },
+];
