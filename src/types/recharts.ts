@@ -33,3 +33,14 @@ export interface IMovementsData {
     amount: number;
   }[];
 }
+
+export interface IYTGYTDData {
+  ytg: {
+    year: string;
+    amount: number;
+  }[];
+  ytd: {
+    year: string;
+    amount: number;
+  }[];
+}

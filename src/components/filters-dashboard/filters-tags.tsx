@@ -6,10 +6,15 @@ import { useMemo } from 'react';
 
 interface IProps {
   tags: string[];
+  isFreezeValues?: boolean;
   onTags: (tag: EnumFiltersTags) => void;
 }
 
-const FiltersTags: React.FC<IProps> = ({ tags, onTags }) => {
+const FiltersTags: React.FC<IProps> = ({
+  tags,
+  onTags,
+  isFreezeValues = false,
+}) => {
   const tagsPrepared = useMemo(
     () => ({
       firstGroup: filterTags.firstGroup.map((item) => ({
@@ -33,7 +38,7 @@ const FiltersTags: React.FC<IProps> = ({ tags, onTags }) => {
             label={item.label}
             icon={item.checked ? <CheckRoundedIcon /> : undefined}
             variant={item.checked ? 'filled' : 'outlined'}
-            onClick={() => onTags(item.value)}
+            onClick={() => !isFreezeValues && onTags(item.value)}
           />
         ))}
       </div>
@@ -44,7 +49,7 @@ const FiltersTags: React.FC<IProps> = ({ tags, onTags }) => {
             label={item.label}
             icon={item.checked ? <CheckRoundedIcon /> : undefined}
             variant={item.checked ? 'filled' : 'outlined'}
-            onClick={() => onTags(item.value)}
+            onClick={() => !isFreezeValues && onTags(item.value)}
           />
         ))}
       </div>

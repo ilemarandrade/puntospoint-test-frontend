@@ -19,6 +19,7 @@ const useFilters: () => {
     | IYearsParamerters[];
   tags: EnumFiltersTags[];
   onTags: (tag: EnumFiltersTags) => void;
+  setTags: (tags: EnumFiltersTags[]) => void;
 } = () => {
   const [parameterActive, setParameterActive] = useState(
     EnumDateMainParameters.TODAY
@@ -86,6 +87,7 @@ const useFilters: () => {
     subParameters,
     tags,
     onTags: handleClickTag,
+    setTags,
   };
 };
 
