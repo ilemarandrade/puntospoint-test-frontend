@@ -75,7 +75,7 @@ const DashboardTable: React.FC<IProps> = ({
           <Table
             title="Transacciones"
             columns={columnsTransactions}
-            data={data}
+            data={currentData}
             className="px-8"
           />
         )}
