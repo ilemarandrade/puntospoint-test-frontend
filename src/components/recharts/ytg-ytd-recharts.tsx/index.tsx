@@ -8,10 +8,11 @@ interface IYTGYTDRechartsData {
 }
 
 interface IProps {
-  data: { ytg: IYTGYTDRechartsData[]; ytd: IYTGYTDRechartsData[] };
+  data?: { ytg: IYTGYTDRechartsData[]; ytd: IYTGYTDRechartsData[] };
+  isLoading?: boolean;
 }
-const YTGAndYDTRechart: React.FC<IProps> = ({ data }) => {
-  const preparedDataYTG = data.ytg.reduce(
+const YTGAndYDTRechart: React.FC<IProps> = ({ data, isLoading }) => {
+  const preparedDataYTG = data?.ytg?.reduce(
     (acc, { amount }, index) => ({
       ...acc,
       ['key' + index]: amount,
@@ -19,7 +20,7 @@ const YTGAndYDTRechart: React.FC<IProps> = ({ data }) => {
     {}
   );
 
-  const preparedDataYTD = data.ytd.reduce(
+  const preparedDataYTD = data?.ytd?.reduce(
     (acc, { amount }, index) => ({
       ...acc,
       ['key' + index]: amount,
@@ -28,11 +29,19 @@ const YTGAndYDTRechart: React.FC<IProps> = ({ data }) => {
   );
 
   return (
-    <Grid2 container>
+    <Grid2 container className="relative">
+      <div
+        className={` ${
+          isLoading
+            ? 'absolute top-0 left-0 w-full h-full animate-pulse bg-gray-200 rounded-md'
+            : ''
+        }`}
+      ></div>
+
       <Grid2>
         <RenderRechart
           data={[preparedDataYTG]}
-          barStructure={data.ytg.map(({ year }, index) => ({
+          barStructure={data?.ytg?.map(({ year }, index) => ({
             key: 'key' + index,
             name: year,
             dateKey: 'key' + index,
@@ -43,7 +52,7 @@ const YTGAndYDTRechart: React.FC<IProps> = ({ data }) => {
       <Grid2>
         <RenderRechart
           data={[preparedDataYTD]}
-          barStructure={data.ytd.map(({ year }, index) => ({
+          barStructure={data?.ytd?.map(({ year }, index) => ({
             key: year,
             name: year,
             dateKey: 'key' + index,

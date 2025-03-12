@@ -9,10 +9,11 @@ import {
   ResponsiveContainer,
   YAxis,
 } from 'recharts';
+import { CategoricalChartProps } from 'recharts/types/chart/generateCategoricalChart';
 
 interface IProps {
-  data: { [key: string]: number }[];
-  barStructure: {
+  data: CategoricalChartProps['data'];
+  barStructure?: {
     key: string;
     name: string;
     dateKey: string;
@@ -59,16 +60,20 @@ const RenderRechart: React.FC<IProps> = ({ data, barStructure, title }) => {
           )}
         />
 
-        {barStructure.map(({ key, name, dateKey }: any, index: number) => (
-          <Bar
-            key={key}
-            yAxisId="left"
-            dataKey={dateKey}
-            fill={index === 0 ? '#EB3535' : '#7A35EB'}
-            name={name}
-            barSize={80}
-          />
-        ))}
+        {barStructure?.length ? (
+          barStructure.map(({ key, name, dateKey }: any, index: number) => (
+            <Bar
+              key={key}
+              yAxisId="left"
+              dataKey={dateKey}
+              fill={index === 0 ? '#EB3535' : '#7A35EB'}
+              name={name}
+              barSize={80}
+            />
+          ))
+        ) : (
+          <></>
+        )}
       </BarChart>
     </ResponsiveContainer>
   );
