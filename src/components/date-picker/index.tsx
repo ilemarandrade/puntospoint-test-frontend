@@ -26,7 +26,10 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import CheckIcon from '@mui/icons-material/Check';
 
 type DatePickerProps = {
-  initialDate?: Date;
+  initialDate?: {
+    start: Date | null;
+    end: Date | null;
+  };
   onDateChange?: (date: Date) => void;
   onRangeChange?: (startDate: Date, endDate: Date) => void;
   className?: string;
@@ -34,20 +37,23 @@ type DatePickerProps = {
 };
 
 export function DatePicker({
-  initialDate = new Date(),
+  initialDate = {
+    start: null,
+    end: null,
+  },
   onDateChange,
   onRangeChange,
   className,
   rangeMode = false,
 }: DatePickerProps) {
-  const [selectedDate, setSelectedDate] = useState<Date>(initialDate);
-  const [startDate, setStartDate] = useState<Date | null>(null);
-  const [endDate, setEndDate] = useState<Date | null>(null);
-  const [currentDate, setCurrentDate] = useState<Date>(initialDate);
+  const [selectedDate, setSelectedDate] = useState<Date>(new Date());
+  const [startDate, setStartDate] = useState<Date | null>(initialDate.start);
+  const [endDate, setEndDate] = useState<Date | null>(initialDate.end);
+  const [currentDate, setCurrentDate] = useState<Date>(new Date());
   const [view, setView] = useState<'calendar' | 'month' | 'year'>('calendar');
   const [isSelectingMonth, setIsSelectingMonth] = useState<boolean>(false);
   const [selectedMonths, setSelectedMonths] = useState<number[]>([]);
-
+  console.log({ startDate, endDate });
   const months = [
     'Enero',
     'Febrero',
@@ -146,13 +152,12 @@ export function DatePicker({
   };
 
   const handleCancel = () => {
-    setSelectedDate(initialDate);
-    setCurrentDate(initialDate);
+    setSelectedDate(new Date());
+    setCurrentDate(new Date());
     setStartDate(null);
     setEndDate(null);
     setSelectedMonths([]);
     setView('calendar');
-    onDateChange?.(initialDate);
   };
 
   const handleOK = () => {

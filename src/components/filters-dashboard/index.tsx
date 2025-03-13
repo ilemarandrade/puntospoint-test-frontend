@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useCallback, useEffect } from 'react';
 import Chip from '../chip';
 import { filtersByDates } from '@/constants/filters-options';
 import SubParameter from './sub-parameters';
@@ -8,6 +8,7 @@ import useFilters from './hooks/use-filters';
 import FiltersTags from './filters-tags';
 import { IFiltersDasboard } from '@/types/recharts';
 import { EnumDateMainParameters, EnumFiltersTags } from '@/types/filters';
+import DatePickerPopover from './date-picker-chip';
 
 interface IProps {
   onChangeFilter?: (params: IFiltersDasboard) => void;
@@ -23,7 +24,14 @@ const FiltersDashboard: React.FC<IProps> = ({ onChangeFilter }) => {
     onTags,
     setTags,
     tags,
+    rangeDate,
+    setRangeDate,
   } = useFilters();
+
+  const handleOnRangeChange = useCallback((from: Date, to: Date) => {
+    setRangeDate({ from, to });
+    onChangeFilter?.({ from, to });
+  }, []);
 
   useEffect(() => {
     if (onChangeFilter) {
@@ -47,11 +55,21 @@ const FiltersDashboard: React.FC<IProps> = ({ onChangeFilter }) => {
       <div className="flex gap-3">
         {filtersByDates.map((item) => (
           <Fragment key={item.label}>
-            <Chip
-              label={item.label}
-              variant={parameterActive === item.parameter ? 'filled' : 'text'}
-              onClick={() => onParameter(item.parameter)}
-            />
+            {item.parameter === EnumDateMainParameters.CUSTOM ? (
+              <DatePickerPopover
+                rangeMode
+                onClick={() => onParameter(item.parameter)}
+                isSelected={parameterActive === item.parameter}
+                onRangeChange={handleOnRangeChange}
+                initialDate={rangeDate}
+              />
+            ) : (
+              <Chip
+                label={item.label}
+                variant={parameterActive === item.parameter ? 'filled' : 'text'}
+                onClick={() => onParameter(item.parameter)}
+              />
+            )}
           </Fragment>
         ))}
       </div>

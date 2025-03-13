@@ -11,7 +11,10 @@ import { DatePicker } from '../../date-picker';
 import Chip from '../../chip';
 
 type DatePickerPopoverProps = {
-  initialDate?: Date;
+  initialDate?: {
+    from: Date | null;
+    to: Date | null;
+  };
   onRangeChange?: (startDate: Date, endDate: Date) => void;
   onClick?: () => void;
   rangeMode?: boolean;
@@ -21,7 +24,10 @@ type DatePickerPopoverProps = {
 };
 
 function DatePickerPopover({
-  initialDate = new Date(),
+  initialDate = {
+    from: null,
+    to: null,
+  },
   onRangeChange,
   rangeMode = false,
   buttonLabel = 'Personalizado',
@@ -34,8 +40,8 @@ function DatePickerPopover({
     start: Date | null;
     end: Date | null;
   }>({
-    start: null,
-    end: null,
+    start: initialDate?.from,
+    end: initialDate?.to,
   });
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -60,7 +66,7 @@ function DatePickerPopover({
     if (!isSelected) {
       setDateRange({ start: null, end: null });
     }
-  }, [initialDate, isSelected]);
+  }, [isSelected]);
 
   return (
     <div className={className}>
@@ -104,7 +110,11 @@ function DatePickerPopover({
           },
         }}
       >
-        <DatePicker onRangeChange={handleRangeChange} rangeMode={rangeMode} />
+        <DatePicker
+          onRangeChange={handleRangeChange}
+          rangeMode={rangeMode}
+          initialDate={dateRange}
+        />
       </Popover>
     </div>
   );
