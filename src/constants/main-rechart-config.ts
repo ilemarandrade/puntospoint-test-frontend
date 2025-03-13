@@ -1,5 +1,5 @@
 import { EnumFiltersTags } from '@/types/filters';
-import { ISalesData } from '@/types/recharts';
+import { IMovementsData } from '@/types/recharts';
 import { LegendType } from 'recharts';
 
 interface IMainRechartConfig {
@@ -10,7 +10,7 @@ interface IMainRechartConfig {
   id: EnumFiltersTags;
   label: string;
   tooltip: string;
-  keyAccessor: keyof ISalesData;
+  keyAccessor: keyof IMovementsData;
 }
 
 export const mainRechartConfig: IMainRechartConfig[] = [

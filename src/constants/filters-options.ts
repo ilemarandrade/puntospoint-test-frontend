@@ -6,60 +6,58 @@ import {
   IFiltersByDates,
 } from '@/types/filters';
 
-const monthsFilters = [
-  {
-    name: EnumThisMonthSubParameters.ALL,
-    label: 'Todo',
-  },
-  {
-    name: EnumThisMonthSubParameters.JANUARY,
-    label: 'Enero',
-  },
-  {
-    name: EnumThisMonthSubParameters.FEBRUARY,
-    label: 'Febrero',
-  },
-  {
-    name: EnumThisMonthSubParameters.MARCH,
-    label: 'Marzo',
-  },
-  {
-    name: EnumThisMonthSubParameters.APRIL,
-    label: 'Abril',
-  },
-  {
-    name: EnumThisMonthSubParameters.MAY,
-    label: 'Mayo',
-  },
-  {
-    name: EnumThisMonthSubParameters.JUNE,
-    label: 'Junio',
-  },
-  {
-    name: EnumThisMonthSubParameters.JULY,
-    label: 'Julio',
-  },
-  {
-    name: EnumThisMonthSubParameters.AUGUST,
-    label: 'Agosto',
-  },
-  {
-    name: EnumThisMonthSubParameters.SEPTEMBER,
-    label: 'Septiembre',
-  },
-  {
-    name: EnumThisMonthSubParameters.OCTOBER,
-    label: 'Octubre',
-  },
-  {
-    name: EnumThisMonthSubParameters.NOVEMBER,
-    label: 'Noviembre',
-  },
-  {
-    name: EnumThisMonthSubParameters.DECEMBER,
-    label: 'Diciembre',
-  },
-];
+export const monthsSpanish = {
+  [EnumThisMonthSubParameters.ALL]: 'Todo',
+  [EnumThisMonthSubParameters.JANUARY]: 'Enero',
+  [EnumThisMonthSubParameters.FEBRUARY]: 'Febrero',
+  [EnumThisMonthSubParameters.MARCH]: 'Marzo',
+  [EnumThisMonthSubParameters.APRIL]: 'Abril',
+  [EnumThisMonthSubParameters.MAY]: 'Mayo',
+  [EnumThisMonthSubParameters.JUNE]: 'Junio',
+  [EnumThisMonthSubParameters.JULY]: 'Julio',
+  [EnumThisMonthSubParameters.AUGUST]: 'Agosto',
+  [EnumThisMonthSubParameters.SEPTEMBER]: 'Septiembre',
+  [EnumThisMonthSubParameters.OCTOBER]: 'Octubre',
+  [EnumThisMonthSubParameters.NOVEMBER]: 'Noviembre',
+  [EnumThisMonthSubParameters.DECEMBER]: 'Diciembre',
+};
+
+export const weekDaysSpanish = {
+  [EnumThisWeekSubParameters.ALL]: 'Todo',
+  [EnumThisWeekSubParameters.MONDAY]: 'Lunes',
+  [EnumThisWeekSubParameters.TUESDAY]: 'Martes',
+  [EnumThisWeekSubParameters.WEDNESDAY]: 'Miércoles',
+  [EnumThisWeekSubParameters.THURSDAY]: 'Jueves',
+  [EnumThisWeekSubParameters.FRIDAY]: 'Viernes',
+  [EnumThisWeekSubParameters.SATURDAY]: 'Sábado',
+  [EnumThisWeekSubParameters.SUNDAY]: 'Domingo',
+};
+
+const createMonthFilters = () => {
+  return Object.values(EnumThisMonthSubParameters).map((month) => ({
+    name: month,
+    label: monthsSpanish[month],
+  }));
+};
+
+const createYearFilters = () => {
+  const years = ['2020', '2021', '2022', '2023', '2024', '2025'];
+  return [
+    { name: EnumThisMonthSubParameters.ALL, label: 'Todo' },
+    ...years.map((year) => ({ name: year, label: year })),
+  ];
+};
+
+export const monthsFilters = createMonthFilters();
+
+export const yearsFilters = createYearFilters();
+
+export const monthsInNumber = Object.fromEntries(
+  Object.values(EnumThisMonthSubParameters).map((month, index) => [
+    month,
+    index,
+  ])
+);
 
 export const filtersByDates: IFiltersByDates[] = [
   {
@@ -70,34 +68,10 @@ export const filtersByDates: IFiltersByDates[] = [
     parameter: EnumDateMainParameters.THIS_WEEK,
     label: '7D',
     subParameters: [
-      {
-        name: EnumThisWeekSubParameters.ALL,
-        label: 'Todo',
-      },
-      {
-        name: EnumThisWeekSubParameters.MONDAY,
-        label: 'Lunes',
-      },
-      {
-        name: EnumThisWeekSubParameters.TUESDAY,
-        label: 'Martes',
-      },
-      {
-        name: EnumThisWeekSubParameters.WEDNESDAY,
-        label: 'Miércoles',
-      },
-      {
-        name: EnumThisWeekSubParameters.THURSDAY,
-        label: 'Jueves',
-      },
-      {
-        name: EnumThisWeekSubParameters.FRIDAY,
-        label: 'Viernes',
-      },
-      {
-        name: EnumThisWeekSubParameters.SATURDAY,
-        label: 'Sábado',
-      },
+      ...Object.values(EnumThisWeekSubParameters).map((day) => ({
+        name: day,
+        label: weekDaysSpanish[day],
+      })),
     ],
   },
   {
@@ -121,13 +95,27 @@ export const filtersByDates: IFiltersByDates[] = [
   {
     parameter: EnumDateMainParameters.MAX,
     label: 'MAX',
-    subParameters: [2020, 2021, 2022, 2023, 2024, 2025],
+    subParameters: yearsFilters,
   },
   {
     parameter: EnumDateMainParameters.CUSTOM,
     label: 'Personalizado',
   },
 ];
+
+export const titleTableDate = {
+  [EnumDateMainParameters.TODAY]: { title: 'Hoy', header: 'Horas' },
+  [EnumDateMainParameters.THIS_WEEK]: { title: '7 días', header: 'Semana' },
+  [EnumDateMainParameters.THIS_MONTH]: { title: 'Este mes', header: 'Días' },
+  [EnumDateMainParameters.THIS_SEMESTER]: { title: '6 meses', header: 'Meses' },
+  [EnumDateMainParameters.YTD_YTG]: { title: 'YTD / YTG', header: 'Meses' },
+  [EnumDateMainParameters.THIS_YEAR]: { title: '1 Año', header: 'Meses' },
+  [EnumDateMainParameters.MAX]: { title: 'MAX', header: 'Años' },
+  [EnumDateMainParameters.CUSTOM]: {
+    title: 'Personalizado',
+    header: 'Personalizado',
+  },
+};
 
 export const filterTags = {
   firstGroup: [

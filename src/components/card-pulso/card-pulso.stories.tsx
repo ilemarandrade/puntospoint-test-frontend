@@ -19,9 +19,9 @@ const exampleData = {
   totalAmount: 5000,
   cashbackAccumulated: 300,
   invoiced: [
-    { date: new Date('2023-09-28'), amount: 1500 },
-    { date: new Date('2023-09-29'), amount: 2000 },
-    { date: new Date('2023-09-30'), amount: 1500 },
+    { date: '2023-09-28', amount: 1500 },
+    { date: '2023-09-29', amount: 2000 },
+    { date: '2023-09-30', amount: 1500 },
   ],
 };
 

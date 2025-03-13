@@ -1,6 +1,6 @@
-import { ISalesData } from '@/types/recharts';
+import { IMovementsData } from '@/types/recharts';
 
-export const data: ISalesData[] = [
+export const data: IMovementsData[] = [
   {
     date: 'Monday',
     newCustomers: 220,
