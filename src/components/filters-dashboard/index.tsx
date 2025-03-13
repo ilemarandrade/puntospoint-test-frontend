@@ -30,7 +30,6 @@ const FiltersDashboard: React.FC<IProps> = ({ onChangeFilter }) => {
 
   const handleOnRangeChange = useCallback((from: Date, to: Date) => {
     setRangeDate({ from, to });
-    onChangeFilter?.({ from, to });
   }, []);
 
   useEffect(() => {
@@ -45,10 +44,20 @@ const FiltersDashboard: React.FC<IProps> = ({ onChangeFilter }) => {
           parameter: parameterActive,
           subParameter: subParameterActive,
           tags,
+          from: rangeDate?.from,
+          to: rangeDate?.to,
         });
       }
     }
-  }, [onChangeFilter, parameterActive, setTags, subParameterActive, tags]);
+  }, [
+    onChangeFilter,
+    parameterActive,
+    rangeDate?.from,
+    rangeDate?.to,
+    setTags,
+    subParameterActive,
+    tags,
+  ]);
 
   return (
     <div className="space-y-12">

@@ -8,6 +8,7 @@ import {
   generateDailyDataForMonth,
   generateHourlyData,
   generateMonthlyData,
+  generateMonthlyDataByRange,
   generateMonthlyDataFrom2020To2025,
   generateMonthlyDataLast6Months,
   generateWeeklyData,
@@ -21,6 +22,8 @@ const getMovements = async (params?: IFiltersDasboard) => {
   const parameter = params?.parameter;
   const subParameter = params?.subParameter;
 
+  console.log({ params });
+
   const isMax = parameter === EnumDateMainParameters.MAX;
   const isToday = parameter === EnumDateMainParameters.TODAY;
   const isYear = parameter === EnumDateMainParameters.THIS_YEAR;
@@ -29,6 +32,12 @@ const getMovements = async (params?: IFiltersDasboard) => {
   const isSemester = parameter === EnumDateMainParameters.THIS_SEMESTER;
   const subParameterIsNotAll = subParameter !== EnumThisMonthSubParameters.ALL;
   const isCustom = parameter === EnumDateMainParameters.CUSTOM;
+
+  if (isCustom) return generateCustomData(params?.from, params?.to);
+
+  if (params?.from && params?.to) {
+    return generateMonthlyDataByRange(params?.from, params?.to);
+  }
 
   if (isThisWeek && subParameter !== EnumThisWeekSubParameters.ALL) {
     return generateHourlyData();
