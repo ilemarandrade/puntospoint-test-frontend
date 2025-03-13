@@ -1,8 +1,10 @@
-import { filtersByDates } from '@/constants/filters-options';
+import { filtersByDates, filterTags } from '@/constants/filters-options';
 import {
   EnumDateMainParameters,
+  EnumFiltersTags,
   IThisMonthSubParameters,
   IThisWeekSubParameters,
+  IYearsParamerters,
 } from '@/types/filters';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -14,15 +16,18 @@ const useFilters: () => {
   subParameters?:
     | IThisWeekSubParameters[]
     | IThisMonthSubParameters[]
-    | number[];
-  tags: string[];
-  onTags: (tag: string) => void;
+    | IYearsParamerters[];
+  tags: EnumFiltersTags[];
+  onTags: (tag: EnumFiltersTags) => void;
+  setTags: (tags: EnumFiltersTags[]) => void;
 } = () => {
   const [parameterActive, setParameterActive] = useState(
     EnumDateMainParameters.TODAY
   );
   const [subParameterActive, setSubParameterActive] = useState<string>('');
-  const [tags, setTags] = useState<string[]>([]);
+  const [tags, setTags] = useState<EnumFiltersTags[]>([
+    EnumFiltersTags.CLIENTS,
+  ]);
 
   const handleClickParameter = useCallback(
     (parameter: EnumDateMainParameters) => {
@@ -36,12 +41,26 @@ const useFilters: () => {
   }, []);
 
   const handleClickTag = useCallback(
-    (tag: string) => {
-      if (tags.includes(tag)) {
-        setTags((prev) => prev.filter((item) => item !== tag));
-      } else {
-        setTags((prev) => [...prev, tag]);
+    (tag: EnumFiltersTags) => {
+      const group = Object.values(filterTags).find((group) =>
+        group.some((item) => item.value === tag)
+      );
+
+      if (!group) return;
+
+      const selectedGroupTags = group.filter((item) =>
+        tags.includes(item.value)
+      );
+
+      if (selectedGroupTags.length > 0) {
+        setTags((prev) =>
+          prev.filter(
+            (item) => !selectedGroupTags.map((t) => t.value).includes(item)
+          )
+        );
       }
+
+      setTags((prev) => [...prev, tag]);
     },
     [tags]
   );
@@ -52,12 +71,9 @@ const useFilters: () => {
     )?.subParameters;
 
     if (currentSubParameters?.length) {
-      const firstSubParameter =
-        typeof currentSubParameters?.[0] === 'number'
-          ? `${currentSubParameters?.[0]}`
-          : currentSubParameters?.[0]?.name;
+      const newSubParameter = currentSubParameters?.[0]?.name;
 
-      setSubParameterActive(firstSubParameter);
+      setSubParameterActive(newSubParameter);
     }
 
     return currentSubParameters;
@@ -71,6 +87,7 @@ const useFilters: () => {
     subParameters,
     tags,
     onTags: handleClickTag,
+    setTags,
   };
 };
 

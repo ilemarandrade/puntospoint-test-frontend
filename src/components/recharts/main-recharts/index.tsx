@@ -19,19 +19,27 @@ import {
 } from '@/constants/main-rechart-config';
 import ContentLegend from './content-legend';
 import { EnumFiltersTags } from '@/types/filters';
-import { ISalesData } from '@/types/recharts';
+import { IMovementsData } from '@/types/recharts';
 import { Fragment, useMemo } from 'react';
 import { exportTableCsv } from '@/utils/export-table-csv';
 import { env } from '@/root/env';
+import formatAmount from '@/utils/format-amount';
 
 interface IProps {
-  tagsSelected: EnumFiltersTags[];
-  data: ISalesData[];
+  tagsSelected?: EnumFiltersTags[];
+  data?: IMovementsData[];
+  isLoading?: boolean;
 }
-export default function MainRechart({ tagsSelected, data }: IProps) {
+export default function MainRechart({
+  tagsSelected = [],
+  data,
+  isLoading,
+}: IProps) {
   const isTest = useMemo(() => env.NODE_ENV === 'test', []);
 
   const exportTable = () => {
+    if (!data?.length) return;
+
     const currenTags = mainRechartConfig.filter((row) =>
       tagsSelected.includes(row.id)
     );
@@ -42,7 +50,7 @@ export default function MainRechart({ tagsSelected, data }: IProps) {
       currenTags.map((item) => row[item.keyAccessor])
     );
 
-    exportTableCsv({ headers, body });
+    exportTableCsv({ headers, body: body as string[][] });
   };
 
   const renderChart = useMemo(() => {
@@ -55,7 +63,7 @@ export default function MainRechart({ tagsSelected, data }: IProps) {
       >
         <CartesianGrid vertical={false} />
         <XAxis
-          dataKey="Xaxis"
+          dataKey="date"
           className="text-xs"
           axisLine={{
             stroke: '#D9D9D9',
@@ -72,7 +80,7 @@ export default function MainRechart({ tagsSelected, data }: IProps) {
         <YAxis
           yAxisId="right"
           orientation="right"
-          tickFormatter={(value) => `$${(value / 1000000).toFixed(0)}M`}
+          tickFormatter={(value) => formatAmount(value)}
           className="text-xs"
           axisLine={false}
           tickLine={false}
@@ -83,7 +91,7 @@ export default function MainRechart({ tagsSelected, data }: IProps) {
               mainRechartConfig
                 .filter((item) => item.type === 'line')
                 .map((item) => item.keyAccessor)
-                .includes(payload.dataKey as keyof ISalesData)
+                .includes(payload.dataKey as keyof IMovementsData)
             ) {
               return [`$${Number(value).toLocaleString()}`, name];
             }
@@ -137,7 +145,15 @@ export default function MainRechart({ tagsSelected, data }: IProps) {
 
   return (
     <div className="w-full relative">
-      <div className="h-[500px] w-full pb-6">
+      <div
+        className={` ${
+          isLoading
+            ? 'absolute top-0 left-0 w-full h-full animate-pulse bg-gray-200 rounded-md'
+            : ''
+        }`}
+      ></div>
+
+      <div className={`h-[500px] w-full pb-6 ${isLoading ? 'invisible' : ''}`}>
         {isTest ? (
           renderChart
         ) : (
@@ -152,16 +168,19 @@ export default function MainRechart({ tagsSelected, data }: IProps) {
         )}
       </div>
 
-      <div className="absolute bottom-0 right-8">
-        <Button
-          variant="text"
-          onClick={exportTable}
-          startIcon={<Download fontSize="small" />}
-          data-testid="export-table"
-        >
-          Exportar tabla
-        </Button>
-      </div>
+      {!isLoading && (
+        <div className="absolute bottom-0 right-8">
+          <Button
+            variant="text"
+            onClick={exportTable}
+            startIcon={<Download fontSize="small" />}
+            data-testid="export-table"
+            disabled={!data?.length}
+          >
+            Exportar tabla
+          </Button>
+        </div>
+      )}
     </div>
   );
 }

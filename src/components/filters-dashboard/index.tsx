@@ -1,20 +1,19 @@
+'use client';
+
 import React, { Fragment, useEffect } from 'react';
 import Chip from '../chip';
 import { filtersByDates } from '@/constants/filters-options';
-import { EnumDateMainParameters } from '@/types/filters';
 import SubParameter from './sub-parameters';
 import useFilters from './hooks/use-filters';
 import FiltersTags from './filters-tags';
+import { IFiltersDasboard } from '@/types/recharts';
+import { EnumDateMainParameters, EnumFiltersTags } from '@/types/filters';
 
 interface IProps {
-  onChangeFilter?: (params: {
-    parameter: EnumDateMainParameters;
-    subParameter: string;
-    tags: string[];
-  }) => void;
+  onChangeFilter?: (params: IFiltersDasboard) => void;
 }
 
-const FiltersByDates: React.FC<IProps> = ({ onChangeFilter }) => {
+const FiltersDashboard: React.FC<IProps> = ({ onChangeFilter }) => {
   const {
     parameterActive,
     subParameterActive,
@@ -22,17 +21,26 @@ const FiltersByDates: React.FC<IProps> = ({ onChangeFilter }) => {
     onSubParameter,
     subParameters,
     onTags,
+    setTags,
     tags,
   } = useFilters();
 
   useEffect(() => {
-    onChangeFilter &&
-      onChangeFilter({
-        parameter: parameterActive,
-        subParameter: subParameterActive,
-        tags,
-      });
-  }, [onChangeFilter, parameterActive, subParameterActive, tags]);
+    if (onChangeFilter) {
+      if (
+        parameterActive === EnumDateMainParameters.YTD_YTG &&
+        (!tags.includes(EnumFiltersTags.MONEY) || tags.length > 1)
+      ) {
+        setTags([EnumFiltersTags.MONEY]);
+      } else {
+        onChangeFilter({
+          parameter: parameterActive,
+          subParameter: subParameterActive,
+          tags,
+        });
+      }
+    }
+  }, [onChangeFilter, parameterActive, setTags, subParameterActive, tags]);
 
   return (
     <div className="space-y-12">
@@ -59,9 +67,13 @@ const FiltersByDates: React.FC<IProps> = ({ onChangeFilter }) => {
         ))}
       </div>
 
-      <FiltersTags onTags={onTags} tags={tags} />
+      <FiltersTags
+        onTags={onTags}
+        tags={tags}
+        isFreezeValues={parameterActive === EnumDateMainParameters.YTD_YTG}
+      />
     </div>
   );
 };
 
-export default FiltersByDates;
+export default FiltersDashboard;

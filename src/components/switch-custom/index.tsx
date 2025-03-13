@@ -1,3 +1,5 @@
+'use client';
+
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import BarChartRoundedIcon from '@mui/icons-material/BarChartRounded';
 import { useCallback, useState } from 'react';
@@ -15,7 +17,7 @@ const SwitchCustom: React.FC<IProps> = ({ onClick }) => {
       setIndexActive(index);
       onClick();
     },
-    [indexActive]
+    [onClick]
   );
 
   return (

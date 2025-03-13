@@ -3,7 +3,7 @@
 exports[`TopBar Component renders links with correct href attributes 1`] = `
 <div>
   <header
-    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-zanzjh-MuiPaper-root-MuiAppBar-root"
+    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-1d63wei-MuiPaper-root-MuiAppBar-root"
     style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
   >
     <div
@@ -29,7 +29,7 @@ exports[`TopBar Component renders links with correct href attributes 1`] = `
       >
         <a
           class="text-primary rounded-[100px] h-[40px] gap-2 py-2.5 px-6 font-medium text-sm leading-5 tracking-tight text-center"
-          href="/"
+          href="/dashboard"
         >
           Dashboard
         </a>

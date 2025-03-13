@@ -9,7 +9,10 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
       class="w-full relative"
     >
       <div
-        class="h-[500px] w-full pb-6"
+        class=" "
+      />
+      <div
+        class="h-[500px] w-full pb-6 "
       >
         <div
           class="recharts-wrapper"
@@ -156,7 +159,9 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="80"
-                    />
+                    >
+                      Monday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -190,7 +195,9 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="118.33333333333334"
-                    />
+                    >
+                      Tuesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -224,7 +231,9 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="156.66666666666669"
-                    />
+                    >
+                      Wednesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -258,7 +267,9 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="195"
-                    />
+                    >
+                      Thursday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -292,7 +303,9 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="233.33333333333334"
-                    />
+                    >
+                      Friday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -326,7 +339,9 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="271.6666666666667"
-                    />
+                    >
+                      Saturday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -360,7 +375,9 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="310"
-                    />
+                    >
+                      Sunday
+                    </tspan>
                   </text>
                 </g>
               </g>
@@ -389,7 +406,7 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
                       dy="0.355em"
                       x="318"
                     >
-                      $0M
+                      $0
                     </tspan>
                   </text>
                 </g>
@@ -411,7 +428,7 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
                       dy="0.355em"
                       x="318"
                     >
-                      $0M
+                      $450,000
                     </tspan>
                   </text>
                 </g>
@@ -433,7 +450,7 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
                       dy="0.355em"
                       x="318"
                     >
-                      $1M
+                      $900,000
                     </tspan>
                   </text>
                 </g>
@@ -648,7 +665,10 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
       class="w-full relative"
     >
       <div
-        class="h-[500px] w-full pb-6"
+        class=" "
+      />
+      <div
+        class="h-[500px] w-full pb-6 "
       >
         <div
           class="recharts-wrapper"
@@ -795,7 +815,9 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
                     <tspan
                       dy="0.71em"
                       x="96.42857142857144"
-                    />
+                    >
+                      Monday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -829,7 +851,9 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
                     <tspan
                       dy="0.71em"
                       x="129.28571428571428"
-                    />
+                    >
+                      Tuesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -863,7 +887,9 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
                     <tspan
                       dy="0.71em"
                       x="162.14285714285714"
-                    />
+                    >
+                      Wednesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -897,7 +923,9 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
                     <tspan
                       dy="0.71em"
                       x="194.99999999999997"
-                    />
+                    >
+                      Thursday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -931,7 +959,9 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
                     <tspan
                       dy="0.71em"
                       x="227.85714285714286"
-                    />
+                    >
+                      Friday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -965,7 +995,9 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
                     <tspan
                       dy="0.71em"
                       x="260.7142857142857"
-                    />
+                    >
+                      Saturday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -999,7 +1031,9 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
                     <tspan
                       dy="0.71em"
                       x="293.57142857142856"
-                    />
+                    >
+                      Sunday
+                    </tspan>
                   </text>
                 </g>
               </g>
@@ -1146,7 +1180,7 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
                       dy="0.355em"
                       x="318"
                     >
-                      $0M
+                      $0
                     </tspan>
                   </text>
                 </g>
@@ -1168,7 +1202,7 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
                       dy="0.355em"
                       x="318"
                     >
-                      $0M
+                      $450,000
                     </tspan>
                   </text>
                 </g>
@@ -1190,7 +1224,7 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
                       dy="0.355em"
                       x="318"
                     >
-                      $1M
+                      $900,000
                     </tspan>
                   </text>
                 </g>
@@ -1590,7 +1624,10 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
       class="w-full relative"
     >
       <div
-        class="h-[500px] w-full pb-6"
+        class=" "
+      />
+      <div
+        class="h-[500px] w-full pb-6 "
       >
         <div
           class="recharts-wrapper"
@@ -1737,7 +1774,9 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
                     <tspan
                       dy="0.71em"
                       x="96.42857142857144"
-                    />
+                    >
+                      Monday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -1771,7 +1810,9 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
                     <tspan
                       dy="0.71em"
                       x="129.28571428571428"
-                    />
+                    >
+                      Tuesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -1805,7 +1846,9 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
                     <tspan
                       dy="0.71em"
                       x="162.14285714285714"
-                    />
+                    >
+                      Wednesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -1839,7 +1882,9 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
                     <tspan
                       dy="0.71em"
                       x="194.99999999999997"
-                    />
+                    >
+                      Thursday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -1873,7 +1918,9 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
                     <tspan
                       dy="0.71em"
                       x="227.85714285714286"
-                    />
+                    >
+                      Friday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -1907,7 +1954,9 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
                     <tspan
                       dy="0.71em"
                       x="260.7142857142857"
-                    />
+                    >
+                      Saturday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -1941,7 +1990,9 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
                     <tspan
                       dy="0.71em"
                       x="293.57142857142856"
-                    />
+                    >
+                      Sunday
+                    </tspan>
                   </text>
                 </g>
               </g>
@@ -2088,7 +2139,7 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
                       dy="0.355em"
                       x="318"
                     >
-                      $0M
+                      $0
                     </tspan>
                   </text>
                 </g>
@@ -2532,7 +2583,10 @@ exports[`MainRechart Component renders correctly with Clients tag 1`] = `
       class="w-full relative"
     >
       <div
-        class="h-[500px] w-full pb-6"
+        class=" "
+      />
+      <div
+        class="h-[500px] w-full pb-6 "
       >
         <div
           class="recharts-wrapper"
@@ -2679,7 +2733,9 @@ exports[`MainRechart Component renders correctly with Clients tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="96.42857142857144"
-                    />
+                    >
+                      Monday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -2713,7 +2769,9 @@ exports[`MainRechart Component renders correctly with Clients tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="129.28571428571428"
-                    />
+                    >
+                      Tuesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -2747,7 +2805,9 @@ exports[`MainRechart Component renders correctly with Clients tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="162.14285714285714"
-                    />
+                    >
+                      Wednesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -2781,7 +2841,9 @@ exports[`MainRechart Component renders correctly with Clients tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="194.99999999999997"
-                    />
+                    >
+                      Thursday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -2815,7 +2877,9 @@ exports[`MainRechart Component renders correctly with Clients tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="227.85714285714286"
-                    />
+                    >
+                      Friday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -2849,7 +2913,9 @@ exports[`MainRechart Component renders correctly with Clients tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="260.7142857142857"
-                    />
+                    >
+                      Saturday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -2883,7 +2949,9 @@ exports[`MainRechart Component renders correctly with Clients tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="293.57142857142856"
-                    />
+                    >
+                      Sunday
+                    </tspan>
                   </text>
                 </g>
               </g>
@@ -3271,7 +3339,10 @@ exports[`MainRechart Component renders correctly with Money tag 1`] = `
       class="w-full relative"
     >
       <div
-        class="h-[500px] w-full pb-6"
+        class=" "
+      />
+      <div
+        class="h-[500px] w-full pb-6 "
       >
         <div
           class="recharts-wrapper"
@@ -3418,7 +3489,9 @@ exports[`MainRechart Component renders correctly with Money tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="80"
-                    />
+                    >
+                      Monday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -3452,7 +3525,9 @@ exports[`MainRechart Component renders correctly with Money tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="118.33333333333334"
-                    />
+                    >
+                      Tuesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -3486,7 +3561,9 @@ exports[`MainRechart Component renders correctly with Money tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="156.66666666666669"
-                    />
+                    >
+                      Wednesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -3520,7 +3597,9 @@ exports[`MainRechart Component renders correctly with Money tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="195"
-                    />
+                    >
+                      Thursday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -3554,7 +3633,9 @@ exports[`MainRechart Component renders correctly with Money tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="233.33333333333334"
-                    />
+                    >
+                      Friday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -3588,7 +3669,9 @@ exports[`MainRechart Component renders correctly with Money tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="271.6666666666667"
-                    />
+                    >
+                      Saturday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -3622,7 +3705,9 @@ exports[`MainRechart Component renders correctly with Money tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="310"
-                    />
+                    >
+                      Sunday
+                    </tspan>
                   </text>
                 </g>
               </g>
@@ -3651,7 +3736,7 @@ exports[`MainRechart Component renders correctly with Money tag 1`] = `
                       dy="0.355em"
                       x="318"
                     >
-                      $0M
+                      $0
                     </tspan>
                   </text>
                 </g>
@@ -3910,7 +3995,10 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
       class="w-full relative"
     >
       <div
-        class="h-[500px] w-full pb-6"
+        class=" "
+      />
+      <div
+        class="h-[500px] w-full pb-6 "
       >
         <div
           class="recharts-wrapper"
@@ -4057,7 +4145,9 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
                     <tspan
                       dy="0.71em"
                       x="96.42857142857144"
-                    />
+                    >
+                      Monday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -4091,7 +4181,9 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
                     <tspan
                       dy="0.71em"
                       x="129.28571428571428"
-                    />
+                    >
+                      Tuesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -4125,7 +4217,9 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
                     <tspan
                       dy="0.71em"
                       x="162.14285714285714"
-                    />
+                    >
+                      Wednesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -4159,7 +4253,9 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
                     <tspan
                       dy="0.71em"
                       x="194.99999999999997"
-                    />
+                    >
+                      Thursday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -4193,7 +4289,9 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
                     <tspan
                       dy="0.71em"
                       x="227.85714285714286"
-                    />
+                    >
+                      Friday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -4227,7 +4325,9 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
                     <tspan
                       dy="0.71em"
                       x="260.7142857142857"
-                    />
+                    >
+                      Saturday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -4261,7 +4361,9 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
                     <tspan
                       dy="0.71em"
                       x="293.57142857142856"
-                    />
+                    >
+                      Sunday
+                    </tspan>
                   </text>
                 </g>
               </g>
@@ -4408,7 +4510,7 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
                       dy="0.355em"
                       x="318"
                     >
-                      $0M
+                      $0
                     </tspan>
                   </text>
                 </g>
@@ -4430,7 +4532,7 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
                       dy="0.355em"
                       x="318"
                     >
-                      $0M
+                      $450,000
                     </tspan>
                   </text>
                 </g>
@@ -4452,7 +4554,7 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
                       dy="0.355em"
                       x="318"
                     >
-                      $1M
+                      $900,000
                     </tspan>
                   </text>
                 </g>
@@ -4714,7 +4816,10 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
       class="w-full relative"
     >
       <div
-        class="h-[500px] w-full pb-6"
+        class=" "
+      />
+      <div
+        class="h-[500px] w-full pb-6 "
       >
         <div
           class="recharts-wrapper"
@@ -4861,7 +4966,9 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
                     <tspan
                       dy="0.71em"
                       x="96.42857142857144"
-                    />
+                    >
+                      Monday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -4895,7 +5002,9 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
                     <tspan
                       dy="0.71em"
                       x="129.28571428571428"
-                    />
+                    >
+                      Tuesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -4929,7 +5038,9 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
                     <tspan
                       dy="0.71em"
                       x="162.14285714285714"
-                    />
+                    >
+                      Wednesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -4963,7 +5074,9 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
                     <tspan
                       dy="0.71em"
                       x="194.99999999999997"
-                    />
+                    >
+                      Thursday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -4997,7 +5110,9 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
                     <tspan
                       dy="0.71em"
                       x="227.85714285714286"
-                    />
+                    >
+                      Friday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -5031,7 +5146,9 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
                     <tspan
                       dy="0.71em"
                       x="260.7142857142857"
-                    />
+                    >
+                      Saturday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -5065,7 +5182,9 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
                     <tspan
                       dy="0.71em"
                       x="293.57142857142856"
-                    />
+                    >
+                      Sunday
+                    </tspan>
                   </text>
                 </g>
               </g>
@@ -5212,7 +5331,7 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
                       dy="0.355em"
                       x="318"
                     >
-                      $0M
+                      $0
                     </tspan>
                   </text>
                 </g>
@@ -5518,7 +5637,10 @@ exports[`MainRechart Component renders correctly with Transactions tag 1`] = `
       class="w-full relative"
     >
       <div
-        class="h-[500px] w-full pb-6"
+        class=" "
+      />
+      <div
+        class="h-[500px] w-full pb-6 "
       >
         <div
           class="recharts-wrapper"
@@ -5665,7 +5787,9 @@ exports[`MainRechart Component renders correctly with Transactions tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="96.42857142857144"
-                    />
+                    >
+                      Monday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -5699,7 +5823,9 @@ exports[`MainRechart Component renders correctly with Transactions tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="129.28571428571428"
-                    />
+                    >
+                      Tuesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -5733,7 +5859,9 @@ exports[`MainRechart Component renders correctly with Transactions tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="162.14285714285714"
-                    />
+                    >
+                      Wednesday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -5767,7 +5895,9 @@ exports[`MainRechart Component renders correctly with Transactions tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="194.99999999999997"
-                    />
+                    >
+                      Thursday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -5801,7 +5931,9 @@ exports[`MainRechart Component renders correctly with Transactions tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="227.85714285714286"
-                    />
+                    >
+                      Friday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -5835,7 +5967,9 @@ exports[`MainRechart Component renders correctly with Transactions tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="260.7142857142857"
-                    />
+                    >
+                      Saturday
+                    </tspan>
                   </text>
                 </g>
                 <g
@@ -5869,7 +6003,9 @@ exports[`MainRechart Component renders correctly with Transactions tag 1`] = `
                     <tspan
                       dy="0.71em"
                       x="293.57142857142856"
-                    />
+                    >
+                      Sunday
+                    </tspan>
                   </text>
                 </g>
               </g>
