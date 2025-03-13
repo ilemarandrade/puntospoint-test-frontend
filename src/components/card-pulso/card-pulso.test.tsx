@@ -5,14 +5,15 @@ import CardPulso from './';
 
 describe('CardPulso Component', () => {
   const mockData = {
-    date: new Date('2023-10-01T04:00:00Z'),
-    clients: 1500,
-    totalSales: 300,
-    totalAmount: 50000,
-    cashbackAccumulated: 2000,
+    date: new Date('2023-10-01'),
+    clients: 150,
+    totalSales: 200,
+    totalAmount: 5000,
+    cashbackAccumulated: 300,
     invoiced: [
-      { date: new Date('2023-09-15T04:00:00Z'), amount: 15000 },
-      { date: new Date('2023-09-20T04:00:00Z'), amount: 35000 },
+      { date: '2023-09-28', amount: 1500 },
+      { date: '2023-09-29', amount: 2000 },
+      { date: '2023-09-30', amount: 1500 },
     ],
   };
 
