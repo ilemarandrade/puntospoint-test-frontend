@@ -22,8 +22,6 @@ const getMovements = async (params?: IFiltersDasboard) => {
   const parameter = params?.parameter;
   const subParameter = params?.subParameter;
 
-  console.log({ params });
-
   const isMax = parameter === EnumDateMainParameters.MAX;
   const isToday = parameter === EnumDateMainParameters.TODAY;
   const isYear = parameter === EnumDateMainParameters.THIS_YEAR;
