@@ -4,6 +4,7 @@ import {
   EnumThisWeekSubParameters,
 } from '@/types/filters';
 import {
+  generateCustomData,
   generateDailyDataForMonth,
   generateHourlyData,
   generateMonthlyData,
@@ -28,6 +29,9 @@ const getMovements = async (params?: IFiltersDasboard) => {
   const isThisWeek = parameter === EnumDateMainParameters.THIS_WEEK;
   const isSemester = parameter === EnumDateMainParameters.THIS_SEMESTER;
   const subParameterIsNotAll = subParameter !== EnumThisMonthSubParameters.ALL;
+  const isCustom = parameter === EnumDateMainParameters.CUSTOM;
+
+  if (isCustom) return generateCustomData(params?.from, params?.to);
 
   if (params?.from && params?.to) {
     return generateMonthlyDataByRange(params?.from, params?.to);
@@ -66,6 +70,8 @@ const getMovements = async (params?: IFiltersDasboard) => {
   }
 
   if (isToday) return generateHourlyData(true);
+
+  if (isCustom) return generateCustomData(params?.from, params?.to);
 };
 
 export default getMovements;

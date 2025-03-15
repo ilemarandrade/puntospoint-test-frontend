@@ -6,21 +6,24 @@ import SwitchCustom from '../switch-custom';
 import { ButtonBase } from '@mui/material';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import useGetMovements from '@/hooks/use-get-movements';
-import { EnumFiltersTags, EnumThisMonthSubParameters } from '@/types/filters';
+import { EnumFiltersTags } from '@/types/filters';
 import CardPulsoSkeleton from '../card-pulso/card-pulso-skeleton';
+import { subMonths } from 'date-fns';
+
+const filters = {
+  tags: [
+    EnumFiltersTags.CLIENTS,
+    EnumFiltersTags.MONEY,
+    EnumFiltersTags.TRANSACTIONS,
+    EnumFiltersTags.CASHBACK,
+  ],
+  from: subMonths(new Date(), 3),
+  to: new Date(),
+};
 
 const AsideDashboard = () => {
   const { data, isLoading } = useGetMovements({
-    filters: {
-      tags: [
-        EnumFiltersTags.CLIENTS,
-        EnumFiltersTags.MONEY,
-        EnumFiltersTags.TRANSACTIONS,
-        EnumFiltersTags.CASHBACK,
-      ],
-      from: EnumThisMonthSubParameters.JANUARY,
-      to: EnumThisMonthSubParameters.MARCH,
-    },
+    filters,
   });
 
   const [isCollapsed, setIsCollapsed] = useState(false);

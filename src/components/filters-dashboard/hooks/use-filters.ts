@@ -20,6 +20,8 @@ const useFilters: () => {
   tags: EnumFiltersTags[];
   onTags: (tag: EnumFiltersTags) => void;
   setTags: (tags: EnumFiltersTags[]) => void;
+  rangeDate: { from: Date; to: Date } | undefined;
+  setRangeDate: (rangeDate: { from: Date; to: Date }) => void;
 } = () => {
   const [parameterActive, setParameterActive] = useState(
     EnumDateMainParameters.TODAY
@@ -28,6 +30,7 @@ const useFilters: () => {
   const [tags, setTags] = useState<EnumFiltersTags[]>([
     EnumFiltersTags.CLIENTS,
   ]);
+  const [rangeDate, setRangeDate] = useState<{ from: Date; to: Date }>();
 
   const handleClickParameter = useCallback(
     (parameter: EnumDateMainParameters) => {
@@ -88,6 +91,8 @@ const useFilters: () => {
     tags,
     onTags: handleClickTag,
     setTags,
+    rangeDate,
+    setRangeDate,
   };
 };
 
