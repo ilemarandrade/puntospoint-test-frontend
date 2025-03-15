@@ -554,16 +554,16 @@ exports[`MainRechart Component renders correctly with Cashback tag 1`] = `
               class="space-y-2 flex flex-col items-center"
             >
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -1460,7 +1460,7 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
               class="space-y-2 flex flex-col items-center"
             >
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -1516,13 +1516,13 @@ exports[`MainRechart Component renders correctly with Clients and Cashback tags 
                 </li>
               </ul>
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -2419,7 +2419,7 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
               class="space-y-2 flex flex-col items-center"
             >
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -2475,10 +2475,10 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
                 </li>
               </ul>
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -2521,7 +2521,7 @@ exports[`MainRechart Component renders correctly with Clients and Money tags 1`]
                 </li>
               </ul>
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
             </div>
           </div>
@@ -3215,7 +3215,7 @@ exports[`MainRechart Component renders correctly with Clients tag 1`] = `
               class="space-y-2 flex flex-col items-center"
             >
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -3271,13 +3271,13 @@ exports[`MainRechart Component renders correctly with Clients tag 1`] = `
                 </li>
               </ul>
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
             </div>
           </div>
@@ -3884,13 +3884,13 @@ exports[`MainRechart Component renders correctly with Money tag 1`] = `
               class="space-y-2 flex flex-col items-center"
             >
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -3933,7 +3933,7 @@ exports[`MainRechart Component renders correctly with Money tag 1`] = `
                 </li>
               </ul>
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
             </div>
           </div>
@@ -4691,10 +4691,10 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
               class="space-y-2 flex flex-col items-center"
             >
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -4711,10 +4711,10 @@ exports[`MainRechart Component renders correctly with Transactions and Cashback 
                 </li>
               </ul>
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -5512,10 +5512,10 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
               class="space-y-2 flex flex-col items-center"
             >
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -5532,7 +5532,7 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
                 </li>
               </ul>
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -5575,7 +5575,7 @@ exports[`MainRechart Component renders correctly with Transactions and Money tag
                 </li>
               </ul>
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
             </div>
           </div>
@@ -6170,10 +6170,10 @@ exports[`MainRechart Component renders correctly with Transactions tag 1`] = `
               class="space-y-2 flex flex-col items-center"
             >
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               >
                 <li
                   class="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"
@@ -6190,10 +6190,10 @@ exports[`MainRechart Component renders correctly with Transactions tag 1`] = `
                 </li>
               </ul>
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
               <ul
-                class="flex gap-2"
+                class="flex gap-2 flex-wrap justify-center"
               />
             </div>
           </div>

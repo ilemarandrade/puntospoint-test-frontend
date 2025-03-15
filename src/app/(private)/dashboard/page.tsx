@@ -39,8 +39,13 @@ const DashboardPage = () => {
   }, [filters?.parameter]);
 
   return (
-    <Grid2 container component="main" className="py-8 px-16" spacing={3}>
-      <Grid2 component="section" size={{ md: 9 }} className="space-y-8">
+    <Grid2
+      container
+      component="main"
+      className="p-6 md:py-8 md:px-16"
+      spacing={3}
+    >
+      <Grid2 component="section" size={{ xs: 12, lg: 9 }} className="space-y-8">
         <FiltersDashboard onChangeFilter={onChangeFilter} />
 
         {isParameterYDTAndYGT ? (
@@ -67,7 +72,7 @@ const DashboardPage = () => {
         />
       </Grid2>
 
-      <Grid2 component="aside" size={{ md: 3 }}>
+      <Grid2 component="aside" size={{ xs: 12, lg: 3 }}>
         <AsideDashboard />
       </Grid2>
     </Grid2>

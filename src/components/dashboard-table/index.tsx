@@ -61,7 +61,7 @@ const DashboardTable: React.FC<IProps> = ({
   if (!data?.length) return null;
 
   return (
-    <div className="space-y-4 w-fit m-auto ">
+    <div className="space-y-4 w-fit m-auto hidden md:block">
       <div className="flex gap-2 justify-center">
         <Table
           title={titleDate}
