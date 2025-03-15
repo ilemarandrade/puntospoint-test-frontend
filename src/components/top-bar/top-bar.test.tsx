@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import TopBar from './';
+import TopBar from '.';
 import { linksMenu } from '@/constants/links-menu';
 
 describe('TopBar Component', () => {

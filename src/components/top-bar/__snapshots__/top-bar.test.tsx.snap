@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopBar Component renders links with correct href attributes 1`] = `
+<div>
+  <header
+    class="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionSticky css-1d63wei-MuiPaper-root-MuiAppBar-root"
+    style="--Paper-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);"
+  >
+    <div
+      class="MuiGrid2-root MuiGrid2-container MuiGrid2-direction-xs-row MuiGrid2-spacing-xs-2 css-ubb9a5-MuiGrid2-root"
+    >
+      <div
+        class="MuiGrid2-root MuiGrid2-container MuiGrid2-direction-xs-row MuiGrid2-grid-xs-0 MuiGrid2-grid-sm-0 MuiGrid2-grid-lg-3 css-1a0qr9e-MuiGrid2-root"
+      >
+        <img
+          alt="Logo"
+          class="w-6/12"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          loading="lazy"
+          src="/puntospoint-logo.svg"
+          style="color: transparent;"
+          width="100"
+        />
+      </div>
+      <div
+        class="MuiGrid2-root MuiGrid2-container MuiGrid2-direction-xs-row MuiGrid2-grid-xs-grow MuiGrid2-grid-lg-6 css-1dw3rk4-MuiGrid2-root"
+      >
+        <a
+          class="text-primary rounded-[100px] h-[40px] gap-2 py-2.5 px-6 font-medium text-sm leading-5 tracking-tight text-center"
+          href="/dashboard"
+        >
+          Dashboard
+        </a>
+        <a
+          class="text-primary rounded-[100px] h-[40px] gap-2 py-2.5 px-6 font-medium text-sm leading-5 tracking-tight text-center"
+          href="/clients"
+        >
+          Clientes
+        </a>
+        <a
+          class="text-primary rounded-[100px] h-[40px] gap-2 py-2.5 px-6 font-medium text-sm leading-5 tracking-tight text-center"
+          href="/rules"
+        >
+          Reglas de acumulación
+        </a>
+      </div>
+      <div
+        class="MuiGrid2-root MuiGrid2-direction-xs-row MuiGrid2-grid-xs-auto MuiGrid2-grid-lg-3 css-174tjep-MuiGrid2-root"
+      >
+        <div
+          class="w-full h-full flex items-center justify-center gap-1"
+        >
+          <p
+            class="font-medium text-base leading-6 text-center align-middle"
+          >
+            Pamela Rojas Gonzalez
+          </p>
+          <button
+            aria-haspopup="true"
+            class="MuiButtonBase-root css-qn10b5-MuiButtonBase-root"
+            id="basic-button"
+            tabindex="0"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1umw9bq-MuiSvgIcon-root"
+              data-testid="ExpandMoreRoundedIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.88 9.29 12 13.17 8.12 9.29a.996.996 0 0 0-1.41 0c-.39.39-.39 1.02 0 1.41l4.59 4.59c.39.39 1.02.39 1.41 0l4.59-4.59c.39-.39.39-1.02 0-1.41-.39-.38-1.03-.39-1.42 0"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;
