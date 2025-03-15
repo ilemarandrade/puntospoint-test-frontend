@@ -160,8 +160,8 @@ export default function MainRechart({
           <ResponsiveContainer
             width="100%"
             height="100%"
-            minWidth={500}
-            minHeight={400}
+            minWidth={200}
+            minHeight={200}
           >
             {renderChart}
           </ResponsiveContainer>

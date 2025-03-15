@@ -26,8 +26,8 @@ const RenderRechart: React.FC<IProps> = ({ data, barStructure, title }) => {
     <ResponsiveContainer
       width="100%"
       height="100%"
-      minWidth={500}
-      minHeight={400}
+      minWidth={200}
+      minHeight={200}
     >
       <BarChart
         data={data}

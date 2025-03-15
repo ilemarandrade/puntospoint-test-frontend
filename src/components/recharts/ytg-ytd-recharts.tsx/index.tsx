@@ -38,7 +38,7 @@ const YTGAndYDTRechart: React.FC<IProps> = ({ data, isLoading }) => {
         }`}
       ></div>
 
-      <Grid2 size={{ xs: 6 }}>
+      <Grid2 size={{ xs: 12, sm: 6 }}>
         <RenderRechart
           data={[preparedDataYTG]}
           barStructure={data?.ytg?.map(({ year }, index) => ({
@@ -49,7 +49,7 @@ const YTGAndYDTRechart: React.FC<IProps> = ({ data, isLoading }) => {
           title="YTG"
         />
       </Grid2>
-      <Grid2 size={{ xs: 6 }}>
+      <Grid2 size={{ xs: 12, sm: 6 }}>
         <RenderRechart
           data={[preparedDataYTD]}
           barStructure={data?.ytd?.map(({ year }, index) => ({
