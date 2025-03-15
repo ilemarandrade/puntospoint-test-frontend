@@ -15,9 +15,18 @@ interface IProps {
 const queryClient = new QueryClient();
 
 const Providers: React.FC<IProps> = ({ children }) => {
+  const pathname = usePathname();
+
   useEffect(() => {
     ReactGA.initialize(env.GA_MEASUREMENT_ID);
   }, []);
+
+  useEffect(() => {
+    ReactGA.send({
+      hitType: 'pageview',
+      page: pathname,
+    });
+  }, [pathname]);
 
   return (
     <QueryClientProvider client={queryClient}>
