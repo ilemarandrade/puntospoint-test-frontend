@@ -4,10 +4,13 @@ import { linksMenu } from '@/constants/links-menu';
 import {
   AppBar,
   Box,
+  Divider,
   Drawer,
   IconButton,
   ListItem,
   ListItemButton,
+  ListItemIcon,
+  ListItemText,
 } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import Link from 'next/link';
@@ -17,6 +20,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { List } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
+import PeopleRoundedIcon from '@mui/icons-material/PeopleRounded';
+import BalanceRoundedIcon from '@mui/icons-material/BalanceRounded';
+import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
+import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 
 const drawerWidth = 240;
 
@@ -104,27 +112,92 @@ const TopBar = () => {
             },
           }}
         >
-          <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-            <List>
+          <Box
+            sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+          >
+            <Box sx={{ p: 2, textAlign: 'center' }}>
+              <Image
+                src="/puntospoint-logo.svg"
+                alt="Logo"
+                width={120}
+                height={120}
+                className="mx-auto mb-2"
+              />
+            </Box>
+            <Divider />
+            <List sx={{ flexGrow: 1 }}>
               {linksMenu.map((item) => (
                 <ListItem key={item.title} disablePadding>
                   <ListItemButton
-                    sx={{ textAlign: 'center' }}
-                    LinkComponent={Link}
+                    component={Link}
                     href={item.url}
+                    selected={pathname === item.url}
+                    sx={{
+                      '&.Mui-selected': {
+                        backgroundColor: 'primary.main',
+                        color: 'primary.contrastText',
+                        '&:hover': {
+                          backgroundColor: 'primary.dark',
+                        },
+                        '& .MuiListItemIcon-root': {
+                          color: 'primary.contrastText',
+                        },
+                      },
+                    }}
                   >
-                    {item.title}
+                    <ListItemIcon
+                      sx={{
+                        '& svg': {
+                          color:
+                            pathname === item.url ? 'white' : 'text.primary',
+                        },
+                      }}
+                    >
+                      {item.title === 'Dashboard' && <DashboardRoundedIcon />}
+                      {item.title === 'Clientes' && <PeopleRoundedIcon />}
+                      {item.title === 'Reglas de acumulación' && (
+                        <BalanceRoundedIcon />
+                      )}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={item.title}
+                      sx={{
+                        fontSize: '0.875rem',
+                        fontWeight: pathname === item.url ? 600 : 400,
+                        color: pathname === item.url ? 'white' : 'text.primary',
+                      }}
+                    />
                   </ListItemButton>
                 </ListItem>
               ))}
+            </List>
+            <Divider />
+            <List>
               <ListItem disablePadding>
-                <ListItemButton sx={{ textAlign: 'center' }}>
-                  Editar Perfil
+                <ListItemButton>
+                  <ListItemIcon>
+                    <PersonRoundedIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Editar Perfil"
+                    sx={{
+                      fontSize: '0.875rem',
+                    }}
+                  />
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
-                <ListItemButton sx={{ textAlign: 'center' }}>
-                  Cerrar Sesion
+                <ListItemButton sx={{ color: 'error.main' }}>
+                  <ListItemIcon sx={{ color: 'inherit' }}>
+                    <LogoutRoundedIcon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary="Cerrar Sesión"
+                    sx={{
+                      fontSize: '0.875rem',
+                      color: 'inherit',
+                    }}
+                  />
                 </ListItemButton>
               </ListItem>
             </List>
