@@ -32,7 +32,7 @@ const CardPulso: React.FC<IProps> = ({ data, className }) => {
     if (!date) return '';
 
     if (process.env.NODE_ENV === 'test') {
-      return (format as any).format(date, 'dd/MM');
+      return `${date}`;
     }
 
     return format(date, 'dd/MM');
