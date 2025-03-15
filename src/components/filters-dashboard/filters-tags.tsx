@@ -31,7 +31,7 @@ const FiltersTags: React.FC<IProps> = ({
 
   return (
     <div className="flex justify-between overflow-x-auto gap-1">
-      <div className="flex gap-1 md:flex-row flex-col">
+      <div className="flex gap-4 md:gap-1 md:flex-row flex-col">
         {tagsPrepared.firstGroup.map((item) => (
           <Chip
             key={item.value}
@@ -42,7 +42,7 @@ const FiltersTags: React.FC<IProps> = ({
           />
         ))}
       </div>
-      <div className="flex gap-1 md:flex-row flex-col">
+      <div className="flex gap-4 md:gap-1 md:flex-row flex-col">
         {tagsPrepared.secondGroup.map((item) => (
           <Chip
             key={item.value}
