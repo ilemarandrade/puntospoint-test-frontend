@@ -1,7 +1,14 @@
 import React from 'react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import TopBar from './';
+import TopBar from '.';
 import { linksMenu } from '@/constants/links-menu';
+
+jest.mock('@mui/material', () => {
+  return {
+    ...jest.requireActual('@mui/material'),
+    useMediaQuery: () => false,
+  };
+});
 
 describe('TopBar Component', () => {
   test('renders links with correct href attributes', () => {

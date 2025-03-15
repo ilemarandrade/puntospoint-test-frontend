@@ -11,8 +11,8 @@ export interface IFiltersDasboard {
   parameter?: EnumDateMainParameters;
   subParameter?: string;
   tags?: EnumFiltersTags[];
-  from?: Date | EnumThisMonthSubParameters;
-  to?: Date | EnumThisMonthSubParameters;
+  from?: Date;
+  to?: Date;
 }
 
 export interface IMovementsData {

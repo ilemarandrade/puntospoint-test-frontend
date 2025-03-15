@@ -6,7 +6,7 @@ interface ILegendProps {
 
 const Legend: React.FC<ILegendProps> = ({ legends }) => {
   return (
-    <ul className="flex gap-2">
+    <ul className="flex gap-2 flex-wrap justify-center">
       {legends.map((item) => (
         <li
           className="flex recharts-legend-item legend-item-8 justify-center items-center gap-1"

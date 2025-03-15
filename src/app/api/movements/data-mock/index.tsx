@@ -1,5 +1,5 @@
-import { monthsInNumber } from '@/constants/filters-options';
 import { faker } from '@faker-js/faker';
+import { eachDayOfInterval, format, getMonth, getYear } from 'date-fns';
 
 export const generateWeeklyData = () => {
   const daysOfWeek = [
@@ -266,15 +266,20 @@ export const generateMonthlyDataFrom2020To2025 = () => {
   return data;
 };
 
-export const generateMonthlyDataByRange = (from: any, to: any) => {
-  const fromIndex = monthsInNumber[from as keyof typeof monthsInNumber];
-  const toIndex = monthsInNumber[to as keyof typeof monthsInNumber];
-
+export const generateMonthlyDataByRange = (from: Date, to: Date) => {
   const data = [];
 
-  if (fromIndex <= toIndex) {
-    for (let month = fromIndex; month <= toIndex; month++) {
-      const date = new Date(2025, month, 1);
+  const startYear = getYear(from);
+  const startMonth = getMonth(from); // 0-11
+  const endYear = getYear(to);
+  const endMonth = getMonth(to); // 0-11
+
+  for (let year = startYear; year <= endYear; year++) {
+    const monthStart = year === startYear ? startMonth : 0;
+    const monthEnd = year === endYear ? endMonth : 11;
+
+    for (let month = monthStart; month <= monthEnd; month++) {
+      const date = new Date(year, month, 1);
       data.push({
         date: date,
         newCustomers: faker.number.int({ min: 50, max: 200 }),
@@ -306,5 +311,37 @@ export const generateMonthlyDataByRange = (from: any, to: any) => {
     }
   }
 
-  return data;
+  return data.reverse();
+};
+export const generateCustomData = (startDate?: Date, endDate?: Date) => {
+  if (!startDate || !endDate) return [];
+
+  if (startDate > endDate) {
+    const temp = startDate;
+    startDate = endDate;
+    endDate = temp;
+  }
+
+  const days = eachDayOfInterval({ start: startDate, end: endDate });
+
+  const dailyData = days.map((day) => {
+    const formattedDate = format(day, 'dd-MM-yyyy');
+
+    return {
+      date: formattedDate,
+      newCustomers: faker.number.int({ min: 10, max: 100 }),
+      purchased: faker.number.int({ min: 5, max: 50 }),
+      notPurchased: faker.number.int({ min: 1, max: 20 }),
+      totalCustomers: faker.number.int({ min: 100, max: 500 }),
+      totalMoney: faker.number.int({ min: 100000, max: 1000000 }),
+      sales: faker.number.int({ min: 1000, max: 10000 }),
+      returns: faker.number.int({ min: 100, max: 500 }),
+      cashbackGenerated: faker.number.int({ min: 50, max: 300 }),
+      cashbackAccumulated: faker.number.int({ min: 50, max: 1500 }),
+      totalCashback: faker.number.int({ min: 100, max: 2000 }),
+      transactions: faker.number.int({ min: 10, max: 100 }),
+    };
+  });
+
+  return dailyData;
 };

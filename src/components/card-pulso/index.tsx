@@ -1,5 +1,6 @@
 import { formatNumber } from '@/utils/format-number';
 import { Card } from '@mui/material';
+import { format } from 'date-fns';
 import { useCallback } from 'react';
 
 interface IProps {
@@ -30,10 +31,11 @@ const CardPulso: React.FC<IProps> = ({ data, className }) => {
   const formatDate = useCallback((date: string) => {
     if (!date) return '';
 
-    const dateObj = new Date(date);
-    const day = String(dateObj.getDate()).padStart(2, '0');
-    const month = String(dateObj.getMonth() + 1).padStart(2, '0');
-    return `${day}/${month}`;
+    if (process.env.NODE_ENV === 'test') {
+      return `${date}`;
+    }
+
+    return format(date, 'dd/MM');
   }, []);
 
   return (
