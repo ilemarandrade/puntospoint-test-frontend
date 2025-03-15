@@ -61,7 +61,7 @@ const FiltersDashboard: React.FC<IProps> = ({ onChangeFilter }) => {
 
   return (
     <div className="space-y-12">
-      <div className="flex gap-3">
+      <div className="flex gap-3 overflow-x-auto">
         {filtersByDates.map((item) => (
           <Fragment key={item.label}>
             {item.parameter === EnumDateMainParameters.CUSTOM ? (
@@ -83,7 +83,7 @@ const FiltersDashboard: React.FC<IProps> = ({ onChangeFilter }) => {
         ))}
       </div>
 
-      <div className="flex gap-3 mt-3  min-h-[32px]">
+      <div className="flex gap-3 mt-3  min-h-[32px] overflow-x-auto">
         {subParameters?.map((item, index) => (
           <SubParameter
             key={`sub-parameter-${index}`}
