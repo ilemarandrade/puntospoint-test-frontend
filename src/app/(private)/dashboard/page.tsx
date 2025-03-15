@@ -39,7 +39,12 @@ const DashboardPage = () => {
   }, [filters?.parameter]);
 
   return (
-    <Grid2 container component="main" className="py-8 px-16" spacing={3}>
+    <Grid2
+      container
+      component="main"
+      className="p-6 md:py-8 md:px-16"
+      spacing={3}
+    >
       <Grid2 component="section" size={{ md: 9 }} className="space-y-8">
         <FiltersDashboard onChangeFilter={onChangeFilter} />
 
