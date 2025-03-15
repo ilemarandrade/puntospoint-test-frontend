@@ -12,7 +12,9 @@ import { IFiltersDasboard } from '@/types/recharts';
 import { getTitleAndHeaderTheDateTable } from '@/utils/get-title-and-header-the-date-table';
 
 import { Grid2 } from '@mui/material';
+import queryString from 'query-string';
 import { useCallback, useMemo, useState } from 'react';
+import ReactGA from 'react-ga4';
 
 const DashboardPage = () => {
   const [filters, setFilters] = useState<IFiltersDasboard>();
@@ -24,6 +26,12 @@ const DashboardPage = () => {
     });
 
   const onChangeFilter = useCallback((filter: IFiltersDasboard) => {
+    ReactGA.event({
+      category: 'Dashboard',
+      action: 'Send Filter',
+      label: queryString.stringify(filter),
+    });
+
     setFilters(filter);
   }, []);
 
