@@ -26,22 +26,22 @@ describe('TopBar Navigation', () => {
 
     cy.findByText('Pamela Rojas Gonzalez').should('be.visible');
 
-    const profileButton = cy.findByTestId('profile-button');
+    cy.findByTestId('profile-button').as('profileButton');
 
-    profileButton.should('be.visible');
+    cy.get('@profileButton').should('be.visible');
 
-    profileButton.click();
+    cy.get('@profileButton').click();
 
-    const closeSession = cy.findByRole('menuitem', { name: 'Cerrar Sesion' });
-    const editProfile = cy.findByRole('menuitem', { name: 'Editar perfil' });
+    cy.findByRole('menuitem', { name: 'Cerrar Sesion' }).as('closeSession');
+    cy.findByRole('menuitem', { name: 'Editar perfil' }).as('editProfile');
 
-    editProfile.should('be.visible');
-    closeSession.should('be.visible');
+    cy.get('@editProfile').should('be.visible');
+    cy.get('@closeSession').should('be.visible');
 
-    editProfile.click();
+    cy.get('@editProfile').click();
 
-    editProfile.should('not.be.visible');
-    closeSession.should('not.be.visible');
+    cy.get('@editProfile').should('not.exist');
+    cy.get('@closeSession').should('not.exist');
   });
 });
 
@@ -52,14 +52,14 @@ describe('TopBar Navigation Mobile', () => {
 
     cy.findByRole('img', { name: 'Logo' }).should('be.visible');
 
-    const menu = cy.findByTestId('MenuIcon');
+    cy.findByTestId('MenuIcon').as('menu');
 
-    menu.should('be.visible');
+    cy.get('@menu').should('be.visible');
 
-    menu.click();
+    cy.get('@menu').click();
 
     linksMenu.forEach((link) => {
-      const currentLink = cy.findByRole('link', { name: link.title });
+      cy.findByRole('link', { name: link.title }).as('currentLink');
 
       cy.findByRole('link', { name: link.title }).should(
         'have.attr',
@@ -67,7 +67,7 @@ describe('TopBar Navigation Mobile', () => {
         link.url
       );
 
-      currentLink.click();
+      cy.get('@currentLink').click();
 
       cy.url('includes', link.url);
     });

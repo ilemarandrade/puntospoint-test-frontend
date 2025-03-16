@@ -30,11 +30,11 @@ describe('Dashboard Filters', () => {
 
   it('Should display the corresponding subparameters for the selected filter', () => {
     filtersByDates.forEach((filter) => {
-      const parameters = cy
-        .findByRole('button', { name: filter.label })
+      cy.findByRole('button', { name: filter.label })
+        .as('parameter')
         .should('be.visible');
 
-      parameters.click();
+      cy.get('@parameter').click();
 
       if (filter.parameter === EnumDateMainParameters.CUSTOM) {
         cy.findByTestId('date-picker').should('be.visible');
@@ -191,7 +191,6 @@ describe('Aside Dashboard', () => {
           .findByText(`$${formatNumber(movement.cashbackAccumulated)}`)
           .should('be.visible');
 
-        // Validar las facturas
         movement.invoiced?.forEach((invoice, invoiceIndex) => {
           cy.findAllByTestId('card-pulso-invoice')
             .eq(index * 3 + invoiceIndex)
@@ -223,7 +222,9 @@ describe('Tables based in tags filters', () => {
     cy.intercept('GET', '/api/movements?parame*').as('getMovements');
   });
 
-  it('Should display the correct table based on the selected tag', () => {
+  it.only('Should display the correct table based on the selected tag', () => {
+    cy.wait('@getMovements');
+
     filterTags.secondGroup.forEach((currentTag) => {
       cy.findByRole('button', { name: currentTag.label }).click();
 
