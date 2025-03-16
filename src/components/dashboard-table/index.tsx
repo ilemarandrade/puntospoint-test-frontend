@@ -61,49 +61,52 @@ const DashboardTable: React.FC<IProps> = ({
   if (!data?.length) return null;
 
   return (
-    <div className="space-y-4 w-fit m-auto hidden md:block">
-      <div className="flex gap-2 justify-center">
-        <Table
-          title={titleDate}
-          columns={columnsDate.map((col) => ({ ...col, header: headerDate }))}
-          data={currentData}
-          dataTestid="table-date"
-        />
+    <div className="space-y-4 w-fit m-auto hidden md:block max-w-full">
+      <div className="max-w-full overflow-x-auto">
+        <div className="flex gap-2 m-auto">
+          <Table
+            title={titleDate}
+            columns={columnsDate.map((col) => ({ ...col, header: headerDate }))}
+            data={currentData}
+            dataTestid="table-date"
+          />
 
-        {tagsSelected.includes(EnumFiltersTags.CLIENTS) && (
-          <Table
-            title="Clientes"
-            columns={columnsClients}
-            data={currentData}
-            dataTestid="table-clients"
-          />
-        )}
-        {tagsSelected.includes(EnumFiltersTags.TRANSACTIONS) && (
-          <Table
-            title="Transacciones"
-            columns={columnsTransactions}
-            data={currentData}
-            className="px-8"
-            dataTestid="table-transactions"
-          />
-        )}
-        {tagsSelected.includes(EnumFiltersTags.MONEY) && (
-          <Table
-            title="Dinero"
-            columns={columnsMoney}
-            data={currentData}
-            dataTestid="table-money"
-          />
-        )}
-        {tagsSelected.includes(EnumFiltersTags.CASHBACK) && (
-          <Table
-            title="Cashback"
-            columns={columnsCashback}
-            data={currentData}
-            dataTestid="table-cashback"
-          />
-        )}
+          {tagsSelected.includes(EnumFiltersTags.CLIENTS) && (
+            <Table
+              title="Clientes"
+              columns={columnsClients}
+              data={currentData}
+              dataTestid="table-clients"
+            />
+          )}
+          {tagsSelected.includes(EnumFiltersTags.TRANSACTIONS) && (
+            <Table
+              title="Transacciones"
+              columns={columnsTransactions}
+              data={currentData}
+              className="px-8"
+              dataTestid="table-transactions"
+            />
+          )}
+          {tagsSelected.includes(EnumFiltersTags.MONEY) && (
+            <Table
+              title="Dinero"
+              columns={columnsMoney}
+              data={currentData}
+              dataTestid="table-money"
+            />
+          )}
+          {tagsSelected.includes(EnumFiltersTags.CASHBACK) && (
+            <Table
+              title="Cashback"
+              columns={columnsCashback}
+              data={currentData}
+              dataTestid="table-cashback"
+            />
+          )}
+        </div>
       </div>
+
       <Pagination
         itemsPerPage={itemsPerPage}
         currentPage={currentPage}
