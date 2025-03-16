@@ -13,6 +13,7 @@ exports[`CardPulso Component renders correctly with provided data 1`] = `
     </h3>
     <div
       class="flex justify-between"
+      data-testid="card-pulso-client"
     >
       <p
         class="text-sm"
@@ -27,6 +28,7 @@ exports[`CardPulso Component renders correctly with provided data 1`] = `
     </div>
     <div
       class="flex justify-between"
+      data-testid="card-pulso-sale"
     >
       <p
         class="text-sm"
@@ -41,6 +43,7 @@ exports[`CardPulso Component renders correctly with provided data 1`] = `
     </div>
     <div
       class="flex justify-between"
+      data-testid="card-pulso-amount"
     >
       <p
         class="text-sm"
@@ -61,6 +64,7 @@ exports[`CardPulso Component renders correctly with provided data 1`] = `
     </h3>
     <div
       class="flex justify-between"
+      data-testid="card-pulso-accumulated"
     >
       <p
         class="text-sm"
@@ -76,6 +80,7 @@ exports[`CardPulso Component renders correctly with provided data 1`] = `
     </div>
     <div
       class="flex justify-between"
+      data-testid="card-pulso-invoice"
     >
       <p
         class="text-sm"
@@ -93,6 +98,7 @@ exports[`CardPulso Component renders correctly with provided data 1`] = `
     </div>
     <div
       class="flex justify-between"
+      data-testid="card-pulso-invoice"
     >
       <p
         class="text-sm"
