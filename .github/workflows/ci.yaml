@@ -19,5 +19,19 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
+      - name: Build the application
+        run: npm run build
+
+      - name: Start the application
+        run: npm start &
+        env:
+          CI: true
+
+      - name: Wait for the application to start
+        run: npx wait-on http://localhost:3000
+
+      - name: Run Cypress tests
+        run: npx cypress run
+
+      - name: Run other tests
         run: npm run test
