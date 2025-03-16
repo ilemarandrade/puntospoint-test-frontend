@@ -3,8 +3,10 @@
 ## Deploy
 
 **App:** [https://puntospoint-test-frontend-1wtizsnu5-ilemarandrades-projects.vercel.app/dashboard](https://puntospoint-test-frontend-1wtizsnu5-ilemarandrades-projects.vercel.app/dashboard)
+![image](https://github.com/user-attachments/assets/5e9cee37-0816-4f78-be74-6410a9ed9759)
 
 **Components catalog:** [https://ilemarandrade.github.io/puntospoint-test-frontend](https://ilemarandrade.github.io/puntospoint-test-frontend)
+![image](https://github.com/user-attachments/assets/81075880-0796-4f25-8005-d9d9e7c18bce)
 
 ## Tools
 
