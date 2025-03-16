@@ -18,13 +18,13 @@ const Providers: React.FC<IProps> = ({ children }) => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (env.NODE_ENV === 'production') return;
+    if (env.NODE_ENV !== 'production') return;
 
     ReactGA.initialize(env.GA_MEASUREMENT_ID);
   }, []);
 
   useEffect(() => {
-    if (env.NODE_ENV === 'production') return;
+    if (env.NODE_ENV !== 'production') return;
 
     ReactGA.send({
       hitType: 'pageview',
