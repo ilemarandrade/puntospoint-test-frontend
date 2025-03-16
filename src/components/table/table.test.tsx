@@ -6,7 +6,12 @@ import { columns, defaultData } from './data-mock';
 describe('Table Component', () => {
   test('renders the table with correct data', () => {
     const { container } = render(
-      <Table title="Test Table" columns={columns} data={defaultData} />
+      <Table
+        title="Test Table"
+        columns={columns}
+        data={defaultData}
+        dataTestid="testId"
+      />
     );
 
     expect(screen.getByText('Test Table')).toBeInTheDocument();

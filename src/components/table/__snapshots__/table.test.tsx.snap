@@ -4,6 +4,7 @@ exports[`Table Component renders the table with correct data 1`] = `
 <div>
   <div
     class="p-4 bg-[#e6e1e6] rounded-[10px] "
+    data-testid="testId"
   >
     <h4
       class="text-center text-sm mb-4 font-medium text-[#48454E]"

@@ -33,6 +33,7 @@ const ProfileMenu = () => {
           bgcolor: open ? '#d8d7d8' : '',
           borderRadius: '100%',
         }}
+        data-testid="profile-button"
       >
         <ExpandMoreRoundedIcon />
       </ButtonBase>

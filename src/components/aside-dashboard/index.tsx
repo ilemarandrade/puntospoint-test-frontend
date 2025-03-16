@@ -70,7 +70,7 @@ const AsideDashboard = () => {
                     data={{
                       date: new Date(item.date),
                       clients: item.totalCustomers,
-                      totalSales: item.totalMoney,
+                      totalSales: item.sales,
                       totalAmount: item.totalMoney,
                       cashbackAccumulated: item.cashbackAccumulated,
                       invoiced: item.invoiced,

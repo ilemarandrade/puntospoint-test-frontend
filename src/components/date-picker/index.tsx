@@ -53,7 +53,7 @@ export function DatePicker({
   const [view, setView] = useState<'calendar' | 'month' | 'year'>('calendar');
   const [isSelectingMonth, setIsSelectingMonth] = useState<boolean>(false);
   const [selectedMonths, setSelectedMonths] = useState<number[]>([]);
-  console.log({ startDate, endDate });
+
   const months = [
     'Enero',
     'Febrero',
@@ -316,6 +316,7 @@ export function DatePicker({
         'bg-[#E6E1E6] rounded-lg max-w-xs shadow-lg mt-4 min-w-[280px]',
         className
       )}
+      data-testid="date-picker"
     >
       {view === 'calendar' && (
         <div className="flex flex-col p-4">
