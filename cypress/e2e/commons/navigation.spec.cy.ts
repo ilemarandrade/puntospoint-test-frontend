@@ -26,9 +26,9 @@ describe('TopBar Navigation', () => {
 
     cy.findByText('Pamela Rojas Gonzalez').should('be.visible');
 
-    const profileButton = cy
-      .findByTestId('profile-button')
-      .should('be.visible');
+    const profileButton = cy.findByTestId('profile-button');
+
+    profileButton.should('be.visible');
 
     profileButton.click();
 
