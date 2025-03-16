@@ -1,6 +1,6 @@
-import { Column } from '@/components/table';
-import { IMovementsData } from '@/types/recharts';
-import formatAmount from '@/utils/format-amount';
+import { Column } from '../../components/table';
+import { IMovementsData } from '../../types/recharts';
+import formatAmount from '../../utils/format-amount';
 
 export const columnsDate: Column<IMovementsData>[] = [
   {

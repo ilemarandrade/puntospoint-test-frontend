@@ -60,6 +60,7 @@ exports[`TopBar Component renders links with correct href attributes 1`] = `
           <button
             aria-haspopup="true"
             class="MuiButtonBase-root css-qn10b5-MuiButtonBase-root"
+            data-testid="profile-button"
             id="basic-button"
             tabindex="0"
             type="button"
