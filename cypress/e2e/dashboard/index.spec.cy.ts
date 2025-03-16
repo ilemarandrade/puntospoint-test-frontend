@@ -254,7 +254,7 @@ describe('Tables based in tags filters', () => {
                       'have.text',
                       column.render
                         ? column.render(movement)
-                        : movement[column.keyAccessor]
+                        : movement[column.keyAccessor] || '-'
                     );
                 }
               );
@@ -277,7 +277,7 @@ describe('Tables based in tags filters', () => {
                     'have.text',
                     column.render
                       ? column.render(movement)
-                      : movement[column.keyAccessor]
+                      : movement[column.keyAccessor] || '-'
                   );
               });
             });
@@ -318,7 +318,7 @@ describe('Tables based in tags filters', () => {
                       'have.text',
                       column.render
                         ? column.render(movement)
-                        : movement[column.keyAccessor]
+                        : movement[column.keyAccessor] || '-'
                     );
                 }
               );
@@ -341,7 +341,7 @@ describe('Tables based in tags filters', () => {
                     'have.text',
                     column.render
                       ? column.render(movement)
-                      : movement[column.keyAccessor]
+                      : movement[column.keyAccessor] || '-'
                   );
               });
             });
