@@ -4,9 +4,6 @@ import TopBar from './';
 const meta = {
   title: 'Components/TopBar',
   component: TopBar,
-  parameters: {
-    layout: 'centered',
-  },
 } satisfies Meta<typeof TopBar>;
 
 export default meta;
