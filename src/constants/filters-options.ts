@@ -4,7 +4,7 @@ import {
   EnumThisMonthSubParameters,
   EnumThisWeekSubParameters,
   IFiltersByDates,
-} from '@/types/filters';
+} from '../types/filters';
 
 export const monthsSpanish = {
   [EnumThisMonthSubParameters.ALL]: 'Todo',
@@ -122,20 +122,24 @@ export const filterTags = {
     {
       label: 'Clientes',
       value: EnumFiltersTags.CLIENTS,
+      dataTestid: 'clients',
     },
     {
       label: 'Transacciones',
       value: EnumFiltersTags.TRANSACTIONS,
+      dataTestid: 'transactions',
     },
   ],
   secondGroup: [
     {
       label: 'Dinero',
       value: EnumFiltersTags.MONEY,
+      dataTestid: 'money',
     },
     {
       label: 'Cashback',
       value: EnumFiltersTags.CASHBACK,
+      dataTestid: 'cashback',
     },
   ],
 };

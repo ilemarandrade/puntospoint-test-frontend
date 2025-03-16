@@ -67,10 +67,16 @@ const DashboardTable: React.FC<IProps> = ({
           title={titleDate}
           columns={columnsDate.map((col) => ({ ...col, header: headerDate }))}
           data={currentData}
+          dataTestid="table-date"
         />
 
         {tagsSelected.includes(EnumFiltersTags.CLIENTS) && (
-          <Table title="Clientes" columns={columnsClients} data={currentData} />
+          <Table
+            title="Clientes"
+            columns={columnsClients}
+            data={currentData}
+            dataTestid="table-clients"
+          />
         )}
         {tagsSelected.includes(EnumFiltersTags.TRANSACTIONS) && (
           <Table
@@ -78,16 +84,23 @@ const DashboardTable: React.FC<IProps> = ({
             columns={columnsTransactions}
             data={currentData}
             className="px-8"
+            dataTestid="table-transactions"
           />
         )}
         {tagsSelected.includes(EnumFiltersTags.MONEY) && (
-          <Table title="Dinero" columns={columnsMoney} data={currentData} />
+          <Table
+            title="Dinero"
+            columns={columnsMoney}
+            data={currentData}
+            dataTestid="table-money"
+          />
         )}
         {tagsSelected.includes(EnumFiltersTags.CASHBACK) && (
           <Table
             title="Cashback"
             columns={columnsCashback}
             data={currentData}
+            dataTestid="table-cashback"
           />
         )}
       </div>

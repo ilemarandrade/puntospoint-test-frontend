@@ -19,6 +19,7 @@ interface IProps<IData> {
   columns: Column<IData>[];
   data: IData[];
   className?: string;
+  dataTestid?: string;
 }
 
 const Table = <IData,>({
@@ -26,6 +27,7 @@ const Table = <IData,>({
   columns,
   data,
   className = '',
+  dataTestid = '',
 }: IProps<IData>): React.ReactElement => {
   const numberOfColumns = columns.length;
   return (
@@ -33,6 +35,7 @@ const Table = <IData,>({
       className={`${
         numberOfColumns !== 1 ? 'p-4' : 'py-4 px-1.5'
       } bg-[#e6e1e6] rounded-[10px] ${className}`}
+      data-testid={dataTestid}
     >
       <h4 className="text-center text-sm mb-4 font-medium text-[#48454E]">
         {title}
